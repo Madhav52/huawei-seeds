@@ -4,26 +4,33 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import Login from '../components/pages/Login';
-// import DashboardLayout from '../layouts/DLayout';
-
+import Register from '../components/pages/Register';
+import Homepage from '../components/pages/Homepage';
+import Details from '../components/pages/Details';
 
 const routes = [{
     path: '/',
-    name: 'Login',
-    component: Login,
+    name: 'Homepage',
+    component: Homepage,
+    children: [
+        {
+            path: "/login",
+            name: "Login",
+            component: Login
+        },
+        {
+            path: '/register',
+            name: 'Register',
+            component: Register,
+        },
+        {
+            path: "/user-details",
+            name: "Details",
+            component: Details
+        },
+    ]
 },
-// {
-//     path: "/home",
-//     component: DashboardLayout,
-//     children: [
-//         {
-//             path: "/home",
-//             name: "homepage",
-//             component: Homepage
-//         },
-        
-//     ]
-// }
+
 ];
 
 const router = new VueRouter({
