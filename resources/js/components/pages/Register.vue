@@ -24,7 +24,7 @@
                   <v-col cols="9">
                     <v-form v-model="valid" @submit.prevent="loginFunc">
                         <v-text-field
-                        v-model="fullname"
+                        v-model="full_name"
                         label="Legal Full Name"
                         :rules="[rules.required]"
                         name="login"
@@ -115,6 +115,7 @@ export default {
       show: false,
       email: null,
       password: null,
+      full_name: null,
       error: false,
       valid: false,
       toggleLoading: false,
@@ -128,31 +129,30 @@ export default {
     };
   },
   methods: {
-    loginFunc() {
-      this.toggleLoading = true;
-      let data = {
-        email: this.email,
-        password: this.password,
-      };
+    register(e) {
       this.$store
-        .dispatch("login", data)
+        .dispatch("register", {
+          name: this.full_name,
+          email: this.email,
+          password: this.password,
+        })
         .then((response) => {
-          if (response.status == 200) {
-            this.$router.push({
-              name: "homepage",
-            });
-            this.toggleLoading = false;
-          } else {
-            this.toggleLoading = false;
-            this.error = !this.error;
+          if(response.data.status = 200){
+            this.$router.push({ name: "Login" });
           }
         })
-        .catch((err) => {
-          this.toggleLoading = false;
-          this.error = !this.error;
-          this.$swal("Error", err.message, "error");
+        .catch((error) => {
+          this.password = "";
         });
+      // } else {
+      //   this.$swal(
+      //     "Error",
+      //     "Please fill out the captcha before you proceed ahead..",
+      //     "error"
+      //   );
+      // }
     },
+
     changeErrorStatus() {
       this.error = false;
     },
