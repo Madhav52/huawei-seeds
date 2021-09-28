@@ -22,9 +22,9 @@
                 </div>
                 <div class="row justify-center">
                   <v-col cols="9">
-                    <v-form v-model="valid" @submit.prevent="loginFunc">
+                    <v-form v-model="valid">
                         <v-text-field
-                        v-model="full_name"
+                        v-model="name"
                         label="Legal Full Name"
                         :rules="[rules.required]"
                         name="login"
@@ -63,10 +63,9 @@
                         rounded
                         color="#033691"
                         block
-                        to="/homepage"
                         class="mx-2 px-10 py-5 my-10"
                         :loading="toggleLoading"
-                        type="submit"
+                        @click="register"
                         >Register</v-btn
                       >
                         <!-- :disabled="!valid" -->
@@ -113,9 +112,9 @@ export default {
   data() {
     return {
       show: false,
-      email: null,
-      password: null,
-      full_name: null,
+      email: '',
+      password: '',
+      name: '',
       error: false,
       valid: false,
       toggleLoading: false,
@@ -132,15 +131,27 @@ export default {
     register(e) {
       this.$store
         .dispatch("register", {
-          name: this.full_name,
+          name: this.name,
           email: this.email,
           password: this.password,
         })
         .then((response) => {
           if(response.data.status = 200){
+            this.$swal(
+            "Success",
+            "You have been successfully registered.",
+            "success"
+          );
             this.$router.push({ name: "Login" });
+          }else{
+            this.$swal(
+              "Error",
+              "Something went wrong. Please try again later.",
+              "error"
+            );
+          }  
           }
-        })
+        )
         .catch((error) => {
           this.password = "";
         });

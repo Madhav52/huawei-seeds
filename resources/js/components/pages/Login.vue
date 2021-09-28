@@ -64,7 +64,6 @@
                       </div> -->
                       <v-btn
                         rounded
-                        to="/user-details"
                         color="#033691"
                         block
                         class="mx-2 px-10 py-5 my-10"
@@ -139,7 +138,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.$router.push({
-              name: "dashboard",
+              name: "Details",
             });
             this.toggleLoading = false;
           } else {
