@@ -9,7 +9,7 @@
       <v-btn text to="/faq">
         FAQs
       </v-btn>
-       <v-btn text to="/login">
+       <v-btn text to="/">
         Login
       </v-btn>
 

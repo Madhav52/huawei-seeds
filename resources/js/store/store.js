@@ -99,18 +99,10 @@ export const store = new Vuex.Store({
         },
 
         storeUserProfile(context, data) {
+            custom_axios.defaults.headers.post["Content-Type"] =
+        "multipart/form-data";
                 return new Promise((resolve, reject) => {
-                    axios_custom.post('/user_profile', {
-                        namne: data.name,
-                        phone: data.phone,
-                        email: data.email,
-                        gender: data.gender,
-                        address: data.address,
-                        university: data.university,
-                        institution: data.institution,
-                        files: data.files,
-                        statement: data.statement,
-                    })
+                    custom_axios.post('/user_profile', data)
                         .then(response => {
                             resolve(response)
                             context.commit('userProfile', response.data.data)

@@ -7,6 +7,7 @@ import Login from '../components/pages/Login';
 import Register from '../components/pages/Register';
 import Homepage from '../components/pages/Homepage';
 import Details from '../components/pages/Details';
+import FAQ from '../components/pages/FAQ';
 
 const routes = [{
     path: '/',
@@ -27,6 +28,11 @@ const routes = [{
             path: "/user-details",
             name: "Details",
             component: Details
+        },
+        {
+            path: "/faq",
+            name: "FAQ",
+            component: FAQ
         },
     ]
 },

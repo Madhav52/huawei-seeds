@@ -104,22 +104,22 @@
                  <v-col cols="2" class="my-auto py-0">
                      <h5>Gender:</h5>
                  </v-col>
-                 <v-col cols="4" class="py-0">
+                 <v-col cols="6" class="py-0">
                      <v-radio-group v-model="gender" row class="custom-radio">
-                          <v-radio label="Male" v-bind:value="1"></v-radio>
-                          <v-radio label="Female" v-bind:value="0"></v-radio>
-                          <v-radio label="Other" v-bind:value="2"></v-radio>
+                          <v-radio label="Male" value="male"></v-radio>
+                          <v-radio label="Female" value="female"></v-radio>
+                          <v-radio label="Other" value="other"></v-radio>
                         </v-radio-group>
                              </v-col>
 
-            <!-- <v-col cols="4" v-if="gender.value = 2">
+            <v-col cols="4" v-if="this.gender = 'other'">
                 <v-text-field
                     label="Others, Please Specify"
                     required
                     outlined
                     dense
                     ></v-text-field>
-            </v-col> -->
+            </v-col>
              </v-row>
              <v-row>
                 <v-col cols="2" class="my-auto py-0">
@@ -155,11 +155,14 @@
                  <v-col cols="4"><h5>Upload Transcript or Recommendation letter</h5></v-col>
                  <v-col cols="8">
                      <v-file-input
-                    v-model="files"
-                    outlined
-                    placeholder="Upload your documents"
-                    label="Please upload scan copy of either your latest transcript or recommendation letter"
-                    prepend-icon=""
+                        v-model="files"
+                        outlined
+                        :rules="[rules.document.type]"
+                        hint="DOC, PDF and DOCX only"
+                        placeholder="Upload your documents"
+                        label="Please upload scan copy of either your latest transcript or recommendation letter"
+                        v-on:change="onAttachmentFilePicked('files', $event)"
+                        prepend-icon=""
                 >
                     <template v-slot:selection="{ text }">
                     <v-chip
@@ -174,8 +177,8 @@
                  </v-col>
              </v-row>
              <v-row>
-                 <v-col cols="2"><h5>Personal Statemnent</h5></v-col>
-                 <v-col cols="10">
+                 <v-col cols="3"><h5>Personal Statemnent</h5></v-col>
+                 <v-col cols="9">
                      <v-textarea
                         counter
                         v-model="statement"
@@ -287,9 +290,26 @@ export default {
             universityRules: [v => !!v || 'University name is required'],
             institution: '',
             university: '',
-            gender: '',
+            gender: null,
             address: '',
-            files: [],
+            files: "",
+            attachmentUploadError : "",
+            attachmentUploadErrorFiles : "",
+             rules: {
+                document: {
+                    type: (val) => {
+                        if (
+                        val.type === "application/pdf" ||
+                        val.type === "application/doc" ||
+                        val.type === "application/docx" ||
+                        !!val
+                        ) {
+                        return true;
+                        }
+                        return "Please upload pdf, doc or docx";
+                    },
+                },
+             },
             nameRules: [
                 v => !!v || 'Name is required',
                 v => (v && v.length <= 10) || 'Name must be less than 10 characters',
@@ -302,25 +322,72 @@ export default {
         }
     },
     methods: {
+        onAttachmentFilePicked(val, e) {
+            this.attachmentUploadError = "";
+            this.attachmentUploadErrorFiles = "";
+
+            if (val === "files") {
+                this.files = e;
+            } 
+            this.fileValidation();
+        },
+
+        fileValidation() {
+      let file;
+      if (this.files) {
+        file = this.files;
+      } 
+      if (file) {
+        let extension = file.name.split(".").pop();
+        if (file.size <= 10500000) {
+          if (this.files) {
+            if (
+              extension === "pdf" ||
+              extension === "doc" ||
+              extension === "docx"
+            ) {
+              this.uploadedFile = file;
+              this.userProfilehandleSubmit();
+            } else {
+              this.attachmentUploadErrorFiles =
+                "File must be of type pdf, doc or docx.";
+            }
+          }
+        } else {
+          if (this.files) {
+            this.attachmentUploadErrorFiles = "File must be 10MB max";
+          }  else {
+            this.attachmentUploadError = "File must be 10MB max";
+          }
+        }
+      }
+      return;
+    },
+
         userProfilehandleSubmit(e) {
-      this.formHasErrors = false;
-      Object.keys(this.form).forEach((f) => {
-        if (!this.form[f]) this.formHasErrors = true;
-        this.$refs[f].validate(true);
-      });
+             
+
+      var marker, filename;
+      marker = this.files;
+      var formData = new FormData();
+      formData.append("marker", marker);
+      formData.append("statement", this.statement);
+      formData.append("name", this.name);
+      formData.append("email", this.email);
+      formData.append("address", this.address);
+      formData.append("phone", this.phone);
+      formData.append("gender", this.gender);
+      formData.append("institution", this.institution);
+      formData.append("university", this.university);
+    //   this.formHasErrors = false;
+    //   Object.keys(this.form).forEach((f) => {
+    //     if (!this.form[f]) this.formHasErrors = true;
+    //     this.$refs[f].validate(true);df
+    //   });    
         this.$store
-          .dispatch("storeUserProfile", {
-            name: this.name,
-            email: this.email,
-            gender: this.gender,
-            address: this.address,
-            phone: this.phone,
-            university: this.university,
-            institution: this.institution,
-            files: this.files,
-            statement: this.statement,
-          })
+          .dispatch("storeUserProfile", formData)
           .then((response) => {
+              this.$swal("Success", "Your data is successfully saved. We will get back to you soon.", "success");
           })
           .catch((error) => {});
       }

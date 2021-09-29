@@ -2,15 +2,17 @@
   <v-container class="fill-height" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
-        <v-card class="elevation-12" max-width="30rem">
-          <v-toolbar color="#033691" class="mx-auto">
+        <v-card class="elevation-12" max-width="30rem" style="border-radius: 2rem">
+          <!-- <v-toolbar color="#033691" class="mx-auto">
             <v-spacer />
             <v-toolbar-title> REGISTER </v-toolbar-title>
             <v-spacer />
-          </v-toolbar>
+          </v-toolbar> -->
           <v-card-text>
             <v-row>
               <v-col cols="12">
+                <h2 class="text-center" style="font-weight: bold; color: #000">REGISTER</h2>
+                <v-divider></v-divider>
                 <div class="text-center mb-5">
                   <img
                     src="/images/huawei-cloud.png"
@@ -73,10 +75,9 @@
                     </v-form>
                     <div class="text-center">
                         <p class="signin-toggle">
-                            Already have an account? <router-link to="/login">Login</router-link>
+                            Already have an account? <router-link to="/">Login</router-link>
                         </p>
                     </div>
-                    <v-divider></v-divider>
                     <div class="text-center pt-4">
                       <p style="font-weight: bold; font-size: 18px; color: #595959">
                         Powered by
