@@ -8,6 +8,7 @@ export const store = new Vuex.Store({
     state: {
         token: localStorage.getItem('access-token') ? localStorage.getItem('access-token') : null,
         user: null,
+        user_profile: [],
         
     },
 
@@ -18,6 +19,9 @@ export const store = new Vuex.Store({
         getUser(state) {
             return state.user;
         },
+        user_profile(state) {
+            return state.user_profile
+        },
         
     },
 
@@ -27,6 +31,9 @@ export const store = new Vuex.Store({
         },
         setUser(state, payload) {
             state.user = payload;
+        },
+        userProfile(state, value) {
+            state.user_profile = value
         },
         // removeToken(state) {
         //     state.token = null;
@@ -89,6 +96,29 @@ export const store = new Vuex.Store({
                         });
                 });
             }
+        },
+
+        storeUserProfile(context, data) {
+                return new Promise((resolve, reject) => {
+                    axios_custom.post('/user_profile', {
+                        namne: data.name,
+                        phone: data.phone,
+                        email: data.email,
+                        gender: data.gender,
+                        address: data.address,
+                        university: data.university,
+                        institution: data.institution,
+                        files: data.files,
+                        statement: data.statement,
+                    })
+                        .then(response => {
+                            resolve(response)
+                            context.commit('userProfile', response.data.data)
+                        })
+                        .catch(error => {
+                            reject(error)
+                        })
+                })
         },
     }
 

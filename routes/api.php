@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/login', 'AuthController@login')->name('login');
 Route::post('/register', 'AuthController@register');
 Route::middleware('auth:api')->post('logout', 'AuthController@logout')->name('logout');
+
+Route::group(['middleware' => ['auth:api']], function () {
+    Route::post('user_profile', 'UserDetailController@store');
+});
