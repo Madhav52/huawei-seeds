@@ -252,33 +252,33 @@
 export default {
     data () {
       return {
-        e1: 1,
-        valid: true,
-        row: null,
-      fullname: '',
-      phone: '',
-      statement: '',
-      rules: [v => v.length <= 600 || 'Max 600 characters only'],
-      phoneRules: [v => !!v || 'Phone number is required'],
-      addressRules: [v => !!v || 'Address is required'],
-      genderRules: [v => !!v || 'Gender is required'],
-      institutionRules: [v => !!v || 'Institution name is required'],
-      universityRules: [v => !!v || 'University name is required'],
-      institution: '',
-      university: '',
-      gender: '',
-      address: '',
-      files: [],
-      nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
-      ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      ],
-      }
+            e1: 1,
+            valid: true,
+            row: null,
+            fullname: '',
+            phone: '',
+            statement: '',
+            rules: [v => v.length <= 600 || 'Max 600 characters only'],
+            phoneRules: [v => !!v || 'Phone number is required'],
+            addressRules: [v => !!v || 'Address is required'],
+            genderRules: [v => !!v || 'Gender is required'],
+            institutionRules: [v => !!v || 'Institution name is required'],
+            universityRules: [v => !!v || 'University name is required'],
+            institution: '',
+            university: '',
+            gender: '',
+            address: '',
+            files: [],
+            nameRules: [
+                v => !!v || 'Name is required',
+                v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+            ],
+            email: '',
+            emailRules: [
+                v => !!v || 'E-mail is required',
+                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+            ],
+        }
     },
 }
 </script>
