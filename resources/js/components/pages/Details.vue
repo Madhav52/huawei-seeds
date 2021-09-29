@@ -31,14 +31,13 @@
         <v-stepper-items>
         <v-stepper-content step="1">
             <v-card
-                class="mb-12 mt-4"
+                class="mb-4 mt-4"
                 color="white lighten-1"
                 elevation="0"
             >
-            <v-form
+                <v-form
                 ref="form"
                 v-model="valid"
-                lazy-validation
             >
              <v-row>
                 <v-col cols="2" class="my-auto py-0">
@@ -157,7 +156,8 @@
                      <v-file-input
                         v-model="files"
                         outlined
-                        :rules="[rules.document.type]"
+                        required
+                        :rules="[rules.document.type, documentRules]"
                         hint="DOC, PDF and DOCX only"
                         placeholder="Upload your documents"
                         label="Please upload scan copy of either your latest transcript or recommendation letter"
@@ -174,6 +174,14 @@
                     </v-chip>
                     </template>
                 </v-file-input>
+                <v-alert
+                          type="error"
+                          v-if="attachmentUploadErrorFiles"
+                          close-text="X"
+                          dismissible
+                          @click.native="attachmentUploadErrorFiles = ''"
+                          >{{ attachmentUploadErrorFiles }}</v-alert
+                        >
                  </v-col>
              </v-row>
              <v-row>
@@ -181,20 +189,33 @@
                  <v-col cols="9">
                      <v-textarea
                         counter
+                        :rules="statementRules"
                         v-model="statement"
                         outlined
+                        dense
                         maxlength="600"
                         label="Personal Statement"
-                        :rules="rules"
+                        required
                         ></v-textarea>
                         </v-col>
                     </v-row>
+                    <v-checkbox
+                        v-model="acknowledge"
+                        :rules="acknowledgeRules"
+                        color="indigo darken-3"
+                        value="indigo darken-3"
+                        :label="`I hereby declare, that all of the information I have provided is true and correct. I am
+aware that false or incomplete information, whether deliberate or the result of negligence,
+may exclude me from the training`"
+                        hide-details
+            ></v-checkbox>
                 </v-form>
             </v-card>
 
             <v-btn
             color="primary"
             @click="userProfilehandleSubmit"
+            :disabled="!valid"
             >
             Submit
             </v-btn>
@@ -277,22 +298,25 @@ export default {
     data () {
       return {
             e1: 1,
-            valid: true,
+            valid: false,
             row: null,
             name: '',
             phone: '',
             statement: '',
-            rules: [v => v.length <= 600 || 'Max 600 characters only'],
+            maxrules: [v => v.length <= 600 || 'Max 600 characters only'],
             phoneRules: [v => !!v || 'Phone number is required'],
             addressRules: [v => !!v || 'Address is required'],
             genderRules: [v => !!v || 'Gender is required'],
             institutionRules: [v => !!v || 'Institution name is required'],
             universityRules: [v => !!v || 'University name is required'],
+            documentRules: [v => !!v || 'Document is required'],
+            statementRules: [v => !!v || 'Statement is required'],
+            acknowledgeRules: [v => !!v || 'You need to acknowledge before submit your data'],
             institution: '',
             university: '',
             gender: null,
             address: '',
-            files: "",
+            files: null,
             attachmentUploadError : "",
             attachmentUploadErrorFiles : "",
              rules: {
@@ -347,7 +371,7 @@ export default {
               extension === "docx"
             ) {
               this.uploadedFile = file;
-              this.userProfilehandleSubmit();
+            //   this.userProfilehandleSubmit();
             } else {
               this.attachmentUploadErrorFiles =
                 "File must be of type pdf, doc or docx.";
@@ -363,31 +387,38 @@ export default {
       }
       return;
     },
-
-        userProfilehandleSubmit(e) {
-             
-
-      var marker, filename;
-      marker = this.files;
-      var formData = new FormData();
-      formData.append("marker", marker);
-      formData.append("statement", this.statement);
-      formData.append("name", this.name);
-      formData.append("email", this.email);
-      formData.append("address", this.address);
-      formData.append("phone", this.phone);
-      formData.append("gender", this.gender);
-      formData.append("institution", this.institution);
-      formData.append("university", this.university);
-    //   this.formHasErrors = false;
-    //   Object.keys(this.form).forEach((f) => {
-    //     if (!this.form[f]) this.formHasErrors = true;
-    //     this.$refs[f].validate(true);df
-    //   });    
+    clearForm(){
+        this.name = '',
+        this.email = '',
+        this.phone = '',
+        this.address = '',
+        this.files = null,
+        this.gender = '',
+        this.university = '',
+        this.institution = '',
+        this.statement = ''
+    },
+    userProfilehandleSubmit(e) {
+        var formData = new FormData();
+        formData.append("files", this.files, this.files.name);
+        formData.append("statement", this.statement);
+        formData.append("name", this.name);
+        formData.append("email", this.email);
+        formData.append("address", this.address);
+        formData.append("phone", this.phone);
+        formData.append("gender", this.gender);
+        formData.append("institution", this.institution);
+        formData.append("university", this.university);
+        //   this.formHasErrors = false;
+        //   Object.keys(this.form).forEach((f) => {
+        //     if (!this.form[f]) this.formHasErrors = true;
+        //     this.$refs[f].validate(true);df
+        //   });    
         this.$store
           .dispatch("storeUserProfile", formData)
           .then((response) => {
               this.$swal("Success", "Your data is successfully saved. We will get back to you soon.", "success");
+              this.clearForm();
           })
           .catch((error) => {});
       }

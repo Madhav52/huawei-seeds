@@ -22,5 +22,5 @@ Route::post('/register', 'AuthController@register');
 Route::middleware('auth:api')->post('logout', 'AuthController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth:api']], function () {
-    Route::post('user_profile', 'UserDetailController@store');
 });
+Route::post('user_profile', 'UserDetailController@store');
