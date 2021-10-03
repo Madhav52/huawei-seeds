@@ -36,6 +36,9 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+$app->register(Barryvdh\Snappy\LumenServiceProvider::class);
+
+
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class

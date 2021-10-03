@@ -100,6 +100,7 @@
               <v-btn
                 small
                 style="color: #fff; background: #163691"
+                @click="generatePdf"
         
               >
                 Download UserDetails
@@ -154,6 +155,16 @@ export default {
         .then((response) => {
           console.log(response)
           this.users = response.data.users;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+     generateUserDetails() {
+      this.$store
+        .dispatch("generateUserDetails")
+        .then((response) => {
+          
         })
         .catch((error) => {
           console.log(error);

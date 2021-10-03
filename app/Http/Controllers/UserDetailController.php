@@ -58,4 +58,18 @@ class UserDetailController extends Controller
     {
         return response()->json(['error' => false, 'users' => UserDetail::all()]);
     }
+    public function generatePdf(Request $request){
+        $applicant = UserDetail::with(['userdetail'])
+            ->where(['user_id' => $request->user_id, 'job_id' => $request->job_id])
+            ->first();
+        // $headerHtml = view()->make('resume.footer')->render();
+
+        $pdf = SnappyPdf::loadView('resume.pdf', compact('applicant'))
+            ->setOption('margin-bottom', '30mm')
+            ->setOption('footer-html', $footerHtml);
+        //        return $pdf->inline('invoice.pdf');
+        // $this->storelog($request,Auth::user()->user_profile->full_name.' '.' have generated resume of '.' '.$applicant->user->user_profile->full_name);               
+        //        $pdf = SnappyPdf::loadView('resume.pdf', compact('applicant'));
+        return $pdf->inline($applicant->user->user_profile->full_name . '.pdf');
+    }
 }

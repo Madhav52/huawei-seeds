@@ -24,6 +24,7 @@ Route::middleware('auth:api')->post('logout', 'AuthController@logout')->name('lo
 
 Route::group(['middleware' => ['auth:api']], function () {
 Route::get('get-all-users', 'UserDetailController@getAllUsers');
+Route::get('generatePdf', 'UserDetailController@generatePdf');
 
     Route::get('user', function(){
         return response()->json(Auth::user());
