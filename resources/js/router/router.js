@@ -8,6 +8,7 @@ import Register from '../components/pages/Register';
 import Homepage from '../components/pages/Homepage';
 import Details from '../components/pages/Details';
 import FAQ from '../components/pages/FAQ';
+import Users from '../components/admin/Users';
 
 const routes = [{
     path: '/',
@@ -33,6 +34,11 @@ const routes = [{
             path: "/faq",
             name: "FAQ",
             component: FAQ
+        },
+        {
+            path: "/admin/user-lists",
+            name: "Users",
+            component: Users
         },
     ]
 },

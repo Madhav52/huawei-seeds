@@ -45,10 +45,10 @@ class AuthController extends Controller
             'role' => 2,
             'password' => Hash::make($request->password),
         ]);
-        $accessToken = $user->createToken('authToken')->accessToken;
+        // $accessToken = $user->createToken('authToken')->accessToken;
         return response()->json([
             'user' => $user,
-            'access_token' => $accessToken,
+            // 'access_token' => $accessToken,
             'message' => 'User Successfully Registered',
             'status_code' => 200
         ], 200);

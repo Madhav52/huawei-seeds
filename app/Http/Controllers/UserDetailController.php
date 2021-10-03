@@ -27,4 +27,8 @@ class UserDetailController extends Controller
         $data->save();
         return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
     }
+    public function getAllUsers(){
+
+        return response()->json(['error' => false, 'users' => UserDetail::all()]);
+    }
 }

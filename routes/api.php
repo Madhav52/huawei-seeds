@@ -24,3 +24,4 @@ Route::middleware('auth:api')->post('logout', 'AuthController@logout')->name('lo
 Route::group(['middleware' => ['auth:api']], function () {
 });
 Route::post('user_profile', 'UserDetailController@store');
+Route::get('get-all-users', 'UserDetailController@getAllUsers');
