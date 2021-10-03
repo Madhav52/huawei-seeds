@@ -35,11 +35,9 @@
                     <v-col cols="10" class="py-0">
                       <v-text-field
                         v-model="name"
-                        :rules="nameRules"
                         label="Name"
                         outlined
                         dense
-                        required
                         disabled
                       ></v-text-field>
                     </v-col>
@@ -51,11 +49,9 @@
                     <v-col cols="10" class="py-0">
                       <v-text-field
                         v-model="email"
-                        :rules="emailRules"
                         outlined
                         dense
                         label="Valid Email Address"
-                        required
                         disabled
                       ></v-text-field>
                     </v-col>

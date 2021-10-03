@@ -54,8 +54,4 @@ class AuthController extends Controller
             'status_code' => 200
         ], 200);
     }
-
-    public function logout(){
-        
-    }
 }

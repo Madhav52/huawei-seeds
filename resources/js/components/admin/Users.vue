@@ -75,24 +75,27 @@
         ></v-text-field>
       </v-card-title>
       <v-data-table
-        v-model="selected"
         :headers="headers"
         :items="userLists"
         item-key="name"
-        show-select
         class="elevation-1"
         :search="search"
       >
-        <template v-slot:item.actions="{ item }">
-          <div class="d-flex justify-left align-items-center">
-              <v-btn
+        <template v-slot:item.files="{ item }">
+               <a :href="item.files">
+                  <v-btn
                 small
                 style="color: #fff; background: #163691"
         
               >
-                Download Document
+                Preview Document
               </v-btn>
-            </div>
+               </a>
+          </template>
+        <template v-slot:item.actions="{ item }">
+          <div class="d-flex align-items-center">
+              
+            
             <div class="d-flex justify-left align-items-center">
               <v-btn
                 small
@@ -102,6 +105,7 @@
                 Download UserDetails
               </v-btn>
             </div>
+          </div>
         </template>
       </v-data-table>
     </v-card>
@@ -117,7 +121,6 @@ export default {
       selectedItem: 0,
       mini: false,
       search: " ",
-        userLists: [],
         users: [],
         headers: [
         { text: "S.N.", value: "sn" },
@@ -129,7 +132,8 @@ export default {
           value: "name",
         },
         { text: "User Email", value: "email" },
-        { text: "Created At", value: "createdDate" },
+        { text: "Document", value: "files" },
+        { text: "Created At", value: "created_at" },
         { text: "Actions", value: "actions", sortable: false },
       ],
 
@@ -148,12 +152,16 @@ export default {
       this.$store
         .dispatch("getAllUsers")
         .then((response) => {
-          this.users = response.data;
+          console.log(response)
+          this.users = response.data.users;
         })
         .catch((error) => {
           console.log(error);
         });
     },
+  },
+  mounted(){
+    this.getAllUsers()
   }
 
 }

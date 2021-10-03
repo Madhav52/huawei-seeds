@@ -23,9 +23,10 @@ Route::post('/register', 'AuthController@register');
 Route::middleware('auth:api')->post('logout', 'AuthController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth:api']], function () {
+Route::get('get-all-users', 'UserDetailController@getAllUsers');
+
     Route::get('user', function(){
         return response()->json(Auth::user());
     });
 });
 Route::post('user_profile', 'UserDetailController@store');
-Route::get('get-all-users', 'UserDetailController@getAllUsers');

@@ -16,4 +16,9 @@ class UserDetail extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getFilesAttribute($file)
+    {
+        return env('APP_URL') . '/storage/' . $file;
+    }
 }

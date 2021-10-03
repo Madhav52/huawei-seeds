@@ -24,14 +24,29 @@ class UserDetailController extends Controller
         //     'statement' => 'required|string'
         // ]);
         $data = $request->all();
+        $exists = UserDetail::where('user_id', $request->user_id)->first();
+        if (isset($exists)) {
+            $exists->update($data);
+            if ($_FILES['files']) {
+                $info = pathinfo($_FILES['files']['name']);
+                $ext = $info['extension'];
+                $newname = "profile-" . time() . '.' . $ext;
+                $path = Storage::disk('public')->putFileAs('users/documents', new File($_FILES['files']['tmp_name']), $newname);
+    
+                Storage::disk('public')->setVisibility($path, 'public');
+            }
+            $exists->files = $path;
+        $exists->update();
+            return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
+        }
         $data =  UserDetail::create($data);
         if ($_FILES['files']) {
-            $info = pathinfo($_FILES['file']['name']);
+            $info = pathinfo($_FILES['files']['name']);
             $ext = $info['extension'];
-            $newname = $request->name . "-profile-" . time() . '.' . $ext;
-            $path = Storage::disk('local')->putFileAs('public/users/profile', new File($_FILES['file']['tmp_name']), $newname);
+            $newname = "profile-" . time() . '.' . $ext;
+            $path = Storage::disk('public')->putFileAs('users/documents', new File($_FILES['files']['tmp_name']), $newname);
 
-            Storage::disk('local')->setVisibility($path, 'public');
+            Storage::disk('public')->setVisibility($path, 'public');
         }
         $data->files = $path;
         $data->update();
@@ -41,7 +56,6 @@ class UserDetailController extends Controller
     }
     public function getAllUsers()
     {
-
         return response()->json(['error' => false, 'users' => UserDetail::all()]);
     }
 }

@@ -108,14 +108,9 @@
 <script>
 export default {
   data: () => ({
+    loggedIn: false,
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
   }),
-
-  computed: {
-    loggedIn() {
-      return localStorage.getItem("access-token");
-    },
-  },
 
   methods: {
     logout() {
@@ -134,8 +129,18 @@ export default {
           //   this.$swal("Error", error.message, "error");
         });
     },
+    getUserData() {
+      this.$store.dispatch("getUser").then(() => {
+        this.loggedIn = true;
+      });
+    },
   },
-  mounted() {},
+  mounted() {
+    this.getUserData();
+  },
+  updated() {
+    this.getUserData();
+  },
 };
 </script>
 

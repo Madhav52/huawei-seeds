@@ -73,25 +73,21 @@
                       >
                     </v-form>
                     <div class="text-center">
-                        <p class="signin-toggle">
-                            Don't have an account? <router-link to="/register">Register</router-link>
-                        </p>
+                      <p class="signin-toggle">
+                        Don't have an account?
+                        <router-link to="/register">Register</router-link>
+                      </p>
                     </div>
                     <div class="text-center pt-4">
                       <p style="font-weight: bold; font-size: 18px; color: #595959">
                         Powered by
-                        <a
-                          href="https://applyjob.com"
-                          color="primary"
-                          target="_blank"
-                          >
+                        <a href="https://applyjob.com" color="primary" target="_blank">
                           <img
-                    src="/images/applyjob-logo.png"
-                    alt="Apply Job Logo"
-                    class="img-fluid"
-                    width="50%"
-                  /></a
-                        >
+                            src="/images/applyjob-logo.png"
+                            alt="Apply Job Logo"
+                            class="img-fluid"
+                            width="50%"
+                        /></a>
                       </p>
                       <!-- <p>Huawei © {{ new Date().getFullYear() }}</p> -->
                     </div>
@@ -136,9 +132,16 @@ export default {
         .dispatch("login", data)
         .then((response) => {
           if (response.status == 200) {
-            this.$router.push({
-              name: "Details",
-            });
+            if (response.data.logged_in_user.role === 1) {
+              this.$router.push({
+                name: "Users",
+              });
+            } else {
+              this.$router.push({
+                name: "Details",
+              });
+            }
+
             this.toggleLoading = false;
           } else {
             this.toggleLoading = false;

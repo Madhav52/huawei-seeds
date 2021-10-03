@@ -114,7 +114,7 @@ export const store = new Vuex.Store({
 
         getAllUsers(context) {
             return new Promise((resolve, reject) => {
-                // custom_axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.getters.token;
+                custom_axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token;
                 let url = '/get-all-users';
                 custom_axios.get(url)
                     .then(response => {
