@@ -111,7 +111,7 @@
                         </v-radio-group>
                              </v-col>
 
-            <v-col cols="4" v-if="this.gender = 'other'">
+            <v-col cols="4" v-if="this.gender == 'other'">
                 <v-text-field
                     label="Others, Please Specify"
                     required
