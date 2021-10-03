@@ -9,7 +9,7 @@ export const store = new Vuex.Store({
         token: localStorage.getItem('access-token') ? localStorage.getItem('access-token') : null,
         user: null,
         user_profile: [],
-        
+
     },
 
     getters: {
@@ -22,7 +22,7 @@ export const store = new Vuex.Store({
         user_profile(state) {
             return state.user_profile
         },
-        
+
     },
 
     mutations: {
@@ -87,7 +87,6 @@ export const store = new Vuex.Store({
                         .get("/logout")
                         .then(response => {
                             context.commit('removeToken');
-                            context.commit('removeUser');
                             localStorage.removeItem('access-token');
                             resolve(response);
                         })
@@ -100,23 +99,36 @@ export const store = new Vuex.Store({
 
         storeUserProfile(context, data) {
             custom_axios.defaults.headers.post["Content-Type"] =
-        "multipart/form-data";
-                return new Promise((resolve, reject) => {
-                    custom_axios.post('/user_profile', data)
-                        .then(response => {
-                            resolve(response)
-                            context.commit('userProfile', response.data.data)
-                        })
-                        .catch(error => {
-                            reject(error)
-                        })
-                })
+                "multipart/form-data";
+            return new Promise((resolve, reject) => {
+                custom_axios.post('/user_profile', data)
+                    .then(response => {
+                        resolve(response)
+                        context.commit('userProfile', response.data.data)
+                    })
+                    .catch(error => {
+                        reject(error)
+                    })
+            })
         },
 
-        getAllUsers(context){
+        getAllUsers(context) {
             return new Promise((resolve, reject) => {
                 // custom_axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.getters.token;
                 let url = '/get-all-users';
+                custom_axios.get(url)
+                    .then(response => {
+                        resolve(response)
+                    })
+                    .catch(error => {
+                        reject(error)
+                    })
+            })
+        },
+        getUser(context) {
+            return new Promise((resolve, reject) => {
+                custom_axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token;
+                let url = '/user';
                 custom_axios.get(url)
                     .then(response => {
                         resolve(response)
