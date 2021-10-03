@@ -188,15 +188,14 @@
                  <v-col cols="3"><h5>Personal Statemnent</h5></v-col>
                  <v-col cols="9">
                      <v-textarea
-                        counter
                         :rules="statementRules"
                         v-model="statement"
                         outlined
                         dense
-                        maxlength="600"
                         label="Personal Statement"
                         required
                         ></v-textarea>
+                        <p class="text-right">{{wordCount}} Words. Maximum 600 words only.</p>
                         </v-col>
                     </v-row>
                     <v-checkbox
@@ -206,7 +205,7 @@
                         value="indigo darken-3"
                         :label="`I hereby declare, that all of the information I have provided is true and correct. I am
 aware that false or incomplete information, whether deliberate or the result of negligence,
-may exclude me from the training`"
+may exclude me from the training.`"
                         hide-details
             ></v-checkbox>
                 </v-form>
@@ -215,7 +214,7 @@ may exclude me from the training`"
             <v-btn
             color="primary"
             @click="userProfilehandleSubmit"
-            :disabled="!valid"
+            :disabled="!valid && wordCount < 600"
             >
             Submit
             </v-btn>
@@ -312,6 +311,7 @@ export default {
             documentRules: [v => !!v || 'Document is required'],
             statementRules: [v => !!v || 'Statement is required'],
             acknowledgeRules: [v => !!v || 'You need to acknowledge before submit your data'],
+            acknowledge: '',
             institution: '',
             university: '',
             gender: null,
@@ -345,6 +345,13 @@ export default {
             ],
         }
     },
+    computed: {
+	  wordCount(){
+		  var vm = this,filecont = vm.statement;
+          return vm.skip_html && (filecont = filecont.replace(/<\S[^><]*>/gi, "")),
+			  vm.statement.match(/\w+/g) ? vm.statement.match(/\w+/g).length : 0;
+	  },
+  },
     methods: {
         onAttachmentFilePicked(val, e) {
             this.attachmentUploadError = "";
