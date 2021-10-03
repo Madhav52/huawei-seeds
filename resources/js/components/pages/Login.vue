@@ -13,7 +13,7 @@
               <v-col cols="12">
                 <h2 class="text-center" style="font-weight: bold; color: #000">LOGIN</h2>
                 <v-divider></v-divider>
-                <div class="text-center mb-5">
+                <!-- <div class="text-center mb-5">
                   <img
                     src="/images/huawei-cloud.png"
                     alt="Apply Job Logo"
@@ -21,9 +21,9 @@
                     width="60%"
                     height="50px"
                   />
-                </div>
+                </div> -->
                 <div class="row justify-center">
-                  <v-col cols="9">
+                  <v-col cols="9" class="mt-4">
                     <v-form v-model="valid" @submit.prevent="loginFunc">
                       <v-text-field
                         v-model="email"
@@ -50,11 +50,11 @@
                         </template>
                         Email or password you entered doesn't match
                       </v-alert>
-                      <div class="text-right my-5">
+                      <!-- <div class="text-right my-5">
                         <a href="/reset-password" color="primary"
                           >Forgot Password?</a
                         >
-                      </div>
+                      </div> -->
                       <!-- <div class="text-center">
                         <small
                           >By signing in to your account, you agree to
@@ -89,8 +89,7 @@
                     src="/images/applyjob-logo.png"
                     alt="Apply Job Logo"
                     class="img-fluid"
-                    width="30%"
-                    height="30px"
+                    width="50%"
                   /></a
                         >
                       </p>

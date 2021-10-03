@@ -13,7 +13,7 @@
               <v-col cols="12">
                 <h2 class="text-center" style="font-weight: bold; color: #000">REGISTER</h2>
                 <v-divider></v-divider>
-                <div class="text-center mb-5">
+                <!-- <div class="text-center mb-5">
                   <img
                     src="/images/huawei-cloud.png"
                     alt="Apply Job Logo"
@@ -21,7 +21,7 @@
                     width="60%"
                     height="50px"
                   />
-                </div>
+                </div> -->
                 <div class="row justify-center">
                   <v-col cols="9">
                     <v-form v-model="valid">
@@ -38,7 +38,7 @@
                         label="Email Address"
                         :rules="[rules.required, rules.email]"
                         name="login"
-                        prepend-icon="mdi-account"
+                        prepend-icon="mdi-email"
                         type="text"
                       ></v-text-field>
 
@@ -90,7 +90,7 @@
                     src="/images/applyjob-logo.png"
                     alt="Apply Job Logo"
                     class="img-fluid"
-                    width="30%"
+                    width="50%"
                     height="30px"
                   /></a
                         >

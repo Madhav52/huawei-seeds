@@ -19,16 +19,17 @@
         <v-list>
           <v-list-item link>
             <v-list-item-title>
-              <v-icon class="pr-4" small>mdi-logout</v-icon>Program 1
+              <a href="/pdf/Application.pdf" class="pdf-viewer" target="_blank"><v-icon class="pr-4" small >mdi-logout</v-icon>Program Application Call</a>
             </v-list-item-title>
           </v-list-item>
           <v-list-item link>
             <v-list-item-title>
-              <v-icon class="pr-4" small>mdi-logout</v-icon>Program 2
+              <a href="/pdf/Introduction.pdf" class="pdf-viewer" target="_blank"><v-icon class="pr-4" small>mdi-logout</v-icon>Program Introduction</a>
             </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
+      
       <v-btn text to="/faq">
         FAQs
       </v-btn>
@@ -118,7 +119,9 @@ export default {
         'mdi-instagram',
       ],
     }),
+   
     methods: {
+      
     logout() {
       this.$store
         .dispatch("logout")
@@ -142,5 +145,21 @@ export default {
 </script>
 
 <style>
+a {
+  color: #033691;
+}
+a:hover{
+  text-decoration: none;
+}
+.pdf-viewer i {
+  color: #033691 !important;
+}
+.pdf-viewer:hover {
+  color: blue !important;
+  text-decoration: none;
+}
+.pdf-viewer:hover i{
+  color: blue !important;
+}
 
 </style>
