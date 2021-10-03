@@ -17,7 +17,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse20">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">How can I post a job?</span>
+                ><span class="pl-2">Who can join the program?</span>
               </button>
             </h5>
           </div>
@@ -27,20 +27,7 @@
             aria-labelledby="heading20"
             data-parent="#accordionExample"
           >
-            <p>To post a job in ApplyJob.com:</p>
-            <ul>
-              <li>Login to your Applyjob Account first</li>
-              <li>Click on Employer icons from the top of the page</li>
-              <li>Choose the offer that fits best for your company</li>
-              <li>Click on the Purchase Now button</li>
-              <li>Then a new page will appear, where you need to enter payment gateway countries, billing information, payment information.</li>
-              <li>Once the payment succeed, you will redirected to new page</li>
-              <li>Then you need to enter the job details along with job description.</li>
-              <li>Finally click on the Continue button. If you do not receive any error, then your job is published successfully</li>
-            </ul>
-            <strong
-              >We recommend you to write about the Resposibilities, Skills, Experience and Education requirement clearly, so that job seeker won't feel confused and you get high chance of getting desired candidate in a short time.</strong
-            >
+            <p>College undergraduates from any ICT-related discipline with excellent academic records (at least 3.0 GPA), interest in ICT industry and China, and a great enthusiasm for learning; have good English language ability; (preferred but not mandatory) have some knowledge of ICT basics.</p>
           </div>
         </div>
         <div
@@ -55,7 +42,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse21">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">Can I post the job for free?</span>
+                ><span class="pl-2">When is the program?</span>
               </button>
             </h5>
           </div>
@@ -65,11 +52,7 @@
             aria-labelledby="heading21"
             data-parent="#accordionExample"
           >
-            <p>Yes, you can post job for free for the first time only.</p>
-            <p>You can post premium jobs for free too, if there is promotions available for job posting.</p>
-            <strong
-              >We recommend you to check the Applyjob.com platform regularly to confirm whether free premium job posting is available or not.</strong
-            >
+            <p>The online aspect of the program will take place from Nov 29 – Dec 6. The offline learning engagements will take place in mid-December.</p>
           </div>
         </div>
         <div
@@ -84,7 +67,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse22">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">Why am I getting no/less response for a job posted?</span>
+                ><span class="pl-2">How can I apply to the program?</span>
               </button>
             </h5>
           </div>
@@ -94,14 +77,7 @@
             aria-labelledby="heading22"
             data-parent="#accordionExample"
           >
-            <p>At times, it may happen that you would not get adequate response for your posted job due to many reasons.</p>
-            <p>In such a case, we recommend you to check some important aspects that might have impacted the responses to your job(s).</p>
-            <ul>
-              <li>Ensure the job is live on site of Applyjob feed and job section.</li>
-              <li>Ensure that you have mentioned an appropriate Job title and a writtem comprehensive job description.</li>
-              <li>Ensure that you have written job description in detail so that job seeker can understand your requirement clearly.</li>
-              <li>Share your posted job links of Applyjob in other social media for enhancing visibility of your jobs.</li>
-            </ul>
+            <p>Please visit our application website seedsnepal.com. Register for an account and follow the instructions received on the email you have used to register. Please note that the email address you use for registration will be used to communicate to you throughout the duration of the program. The deadline for applications is Nov 7, 2021.</p>
           </div>
         </div>
         <div
@@ -116,7 +92,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse23">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">How can I remove/delete a job from the Applyjob site?</span>
+                ><span class="pl-2">I do not have an ICT related academic background. Can I still apply?</span>
               </button>
             </h5>
           </div>
@@ -126,13 +102,17 @@
             aria-labelledby="heading23"
             data-parent="#accordionExample"
           >
-           <p>To remove/delete a job from Applyjob, you need to:</p>
+           <p>Currently, the program is only open to students with an ICT-related academic background such as</p>
             <ul>
-              <li>Login to your Applyjob Account first</li>
-              <li>Click on the Employer icon from the top of the page</li>
-              <li>A private dashboard will appear for you, then click on the Job Post link from the left side of the page.</li>
-              <li>You will see all the posted jobs and you just need to click on the delete icon from the right corner side of the page, which will permanently delete your job post</li>
+              <li>Bachelor of Engineering (Computer Engineering)</li>
+              <li>Bachelor of Science (Computer Science)</li>
+              <li>Bachelor of Engineering in Electrical and Electronics Engineering</li>
+              <li>Bachelor of Computer Application</li>
+              <li>Bachelor of Science (Computer Science and Information Technology)</li>
+              <li>Bachelor of Information Technology</li>
+              <li> Bachelor of Information Management</li>
             </ul>
+           <p>This is not an exhaustive list and students from any other undergraduate degree with a strong focus on ICT can apply.</p>
           </div>
         </div>
         <div
@@ -147,7 +127,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse24">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">Where can I view the applicants that applied on my job?</span>
+                ><span class="pl-2">Is the course suitable for me even if I am a freshman student?</span>
               </button>
             </h5>
           </div>
@@ -157,12 +137,8 @@
             aria-labelledby="heading24"
             data-parent="#accordionExample"
           >
-            <p>To view applicants that applied to your job, you need to:</p>
-            <ul>
-              <li>First, Login to your Applyjob Account</li>
-              <li>Click on the Employer icon from the top of the page</li>
-              <li>Then, Click on the Applicantions link from the left side of the page.</li>
-            </ul>
+            <p>YES. The mandatory tech courses have been designed for entry level students as an introduction to key technologies such as 5G, cloud computing and AI. You can also go deeper and join the advanced courses as an option.</p>
+            
           </div>
         </div>
         <div
@@ -177,7 +153,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse25">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">How long does a job remain live on the Applyjob site?</span>
+                ><span class="pl-2">What documents do I need to apply?</span>
               </button>
             </h5>
           </div>
@@ -187,9 +163,7 @@
             aria-labelledby="heading25"
             data-parent="#accordionExample"
           >
-          <p>If you have posted a job using free trial, a job remains active for 21 days</p>
-          <p>If you have posted a job using promo code, a job remains active for 15 days</p>
-          <p>If you have posted a job by making a purchase, a job remains active for 30 days</p>
+          <p>Please upload your most-recent transcript (from your most recent semester or year of study). If you are a freshman and do not have a transcript, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head. You will also need to write a 600-word (max) motivation letter.</p>
           </div>
         </div>
          <div
@@ -204,7 +178,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse26">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">How can I contact to those who have applied on my job?</span>
+                ><span class="pl-2">What should be the content of my motivation letter?</span>
               </button>
             </h5>
           </div>
@@ -214,13 +188,139 @@
             aria-labelledby="heading26"
             data-parent="#accordionExample"
           >
-            <p>To contact the applicants that applied to your job, you need to:</p>
-            <ul>
-             <li>First, Login to your Applyjob Account</li>
-              <li>Click on the Employer icon from the top of the page</li>
-              <li>Click on the Applicantions link from the left side of the page.</li>
-              <li>Then, Click on the Confirm button.</li>
-            </ul>
+            <p>Your motivation letter should reflect your objective to participate in the program, your interest in ICT and China, and your enthusiasm for learning. The maximum length of the motivation letter is 600 words. We do not require you to follow a template so you can be as creative as possible.</p>
+            
+          </div>
+        </div>
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading27"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse27">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Is an internet connection mandatory for the program?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse27"
+            aria-labelledby="heading27"
+            data-parent="#accordionExample"
+          >
+            <p>YES. The 15-hour livestream and the 3-hour pre-recorded mandatory courses are only available online. We will be sharing sign-up and other details to our final 20 participants in mid-November.</p>
+            
+          </div>
+        </div>
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading28"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse28">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Will participants from other countries also be joining the program?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse28"
+            aria-labelledby="heading28"
+            data-parent="#accordionExample"
+          >
+            <p>YES. You will get to e-meet your peers from other countries who are also attending the program starting Nov 29. You will be notified of the country list when the online program starts.</p>
+            
+          </div>
+        </div>
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading29"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse29">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">What will I receive upon completion of the program?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse29"
+            aria-labelledby="heading29"
+            data-parent="#accordionExample"
+          >
+            <p>Upon attending all the livestream classes, passing all the mandatory courses and participating in the Tech4Good project, participants will receive a Certificate of Completion and Personal Leadership Report. You will also qualify to join the Seeds for the Future LinkedIn alumni group and participate in recurring events.
+</p>
+            
+          </div>
+        </div>
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading30"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse30">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Is it mandatory to join the offline programs?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse30"
+            aria-labelledby="heading30"
+            data-parent="#accordionExample"
+          >
+            <p>You will receive your Certificate of Completion and Personal Leadership Report upon completion of the online program. You are highly encouraged to attend the offline programs as they will give you a better insight into the ICT industry in Nepal.</p>
+            
+          </div>
+        </div>
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading31"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse31">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Who do I contact if I need support during my application?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse31"
+            aria-labelledby="heading31"
+            data-parent="#accordionExample"
+          >
+            <p>Please call 9801251992 if you need any support during the application.</p>
+            
           </div>
         </div>
       </div>

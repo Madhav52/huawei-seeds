@@ -1,11 +1,34 @@
 <template>
   <v-app>
       <v-app-bar app color="#033691" dark class="px-4">
-        <v-toolbar-title>Huawei Seeds Program</v-toolbar-title>
+        <v-toolbar-title>Application Portal</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text>
-        Download Brochure
-      </v-btn>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on }">
+          <div v-on="on" class="pl-3" style="cursor: pointer !important">
+            <!-- <v-avatar size="32px" color="primary">
+              <v-icon>mdi-account</v-icon>
+            </v-avatar> -->
+            <span class="px-2" style="font-weight: bold; font-family: 'DM Sans', sans-serif !important;">
+              PROGRAM DETAILS
+              <v-icon>mdi-chevron-down</v-icon>
+            </span>
+          </div>
+        </template>
+
+        <v-list>
+          <v-list-item link>
+            <v-list-item-title>
+              <v-icon class="pr-4" small>mdi-logout</v-icon>Program 1
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item link>
+            <v-list-item-title>
+              <v-icon class="pr-4" small>mdi-logout</v-icon>Program 2
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
       <v-btn text to="/faq">
         FAQs
       </v-btn>
