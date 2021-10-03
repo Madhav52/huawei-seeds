@@ -36,7 +36,7 @@ class UserDetailController extends Controller
                 Storage::disk('public')->setVisibility($path, 'public');
             }
             $exists->files = $path;
-        $exists->update();
+            $exists->update();
             return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
         }
         $data =  UserDetail::create($data);

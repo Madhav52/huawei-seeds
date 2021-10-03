@@ -132,10 +132,18 @@ export default {
     getUserData() {
       this.$store.dispatch("getUser").then(() => {
         this.loggedIn = true;
+        
       });
     },
   },
   mounted() {
+    let user = localStorage.getItem('access-token')
+    console.log(user)
+    if(this.user == null){
+          this.$router.push({
+              path: "/",
+            });
+        }
     this.getUserData();
   },
   updated() {

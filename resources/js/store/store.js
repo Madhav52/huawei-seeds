@@ -16,6 +16,9 @@ export const store = new Vuex.Store({
         getToken(state) {
             return state.token;
         },
+        loggedIn(state) {
+            return state.token !== null;
+        },
         getUser(state) {
             return state.user;
         },

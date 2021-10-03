@@ -345,6 +345,13 @@ export default {
   },
   mounted() {
     this.getUserData();
+    let user = localStorage.getItem('access-token')
+    console.log(user)
+    if(this.user == null){
+          this.$router.push({
+              path: "/",
+            });
+        }
   },
   methods: {
     onAttachmentFilePicked(val, e) {

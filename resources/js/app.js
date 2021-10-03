@@ -25,7 +25,24 @@ Vue.use(VueSweetalert2);
   * the page. Then, you may begin adding components to this application
   * or customize the JavaScript scaffolding to fit your unique needs.
   */
- 
+//   router.beforeEach((to, from, next) => {
+//     //  If the next route is requires user to be Logged IN
+//     if (to.matched.some(m => m.meta.requiresAuth) ) {
+//         if(store.getters.loggedIn)
+//             return next()
+
+//         return AuthService.check().then(authenticated => {
+//             if (!authenticated) {
+//                 return next({ path: '/' })
+//             }
+
+//             return next()
+//         })
+//     }
+
+//     return next()
+// })
+
  const app = new Vue({
      el: '#app',
      vuetify: new Vuetify({
