@@ -22,14 +22,14 @@
         <v-list>
           <v-list-item link>
             <v-list-item-title>
-              <a href="/pdf/Application.pdf" class="pdf-viewer" target="_blank"
+              <a href="/pdf/Application-Call.pdf" class="pdf-viewer" target="_blank"
                 ><v-icon class="pr-4" small>mdi-logout</v-icon>Program Application Call</a
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item link>
             <v-list-item-title>
-              <a href="/pdf/Introduction.pdf" class="pdf-viewer" target="_blank"
+              <a href="/pdf/Program-Introduction.pdf" class="pdf-viewer" target="_blank"
                 ><v-icon class="pr-4" small>mdi-logout</v-icon>Program Introduction</a
               >
             </v-list-item-title>
@@ -59,11 +59,27 @@
     <v-footer dark padless>
       <v-card flat tile class="indigo lighten-1 white--text text-center" width="100%">
         <v-card-text>
-          <h4 class="pb-2" style="color: #fff">Follow Us</h4>
-          <a href="" class="px-2"><v-icon size="24px">mdi-facebook</v-icon></a>
-          <a href="" class="px-2"><v-icon size="24px">mdi-instagram</v-icon></a>
+           <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="text-left white--text">
+                  <h4 class="pb-2" style="color: #fff">Follow Us</h4>
+            <a href="" class="px-2"><v-icon size="24px">mdi-facebook</v-icon></a>
+            <a href="" class="px-2"><v-icon size="24px">mdi-earth</v-icon></a>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="text-right">
+                   <h4 style="color: #fff !important">For Support/Enquiry</h4>
+              <p style="color: #fff !important; font-size: 18px">Call Us: 9801251992</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- <a href="" class="px-2"><v-icon size="24px">mdi-instagram</v-icon></a>
           <a href="" class="px-2"><v-icon size="24px">mdi-linkedin</v-icon></a>
-          <a href="" class="px-2"><v-icon size="24px">mdi-youtube</v-icon></a>
+          <a href="" class="px-2"><v-icon size="24px">mdi-youtube</v-icon></a> -->
           <!-- <router-link ></router-link> -->
           <!-- <v-btn
           v-for="icon in icons"
@@ -88,7 +104,7 @@
             <div class="row">
               <div class="col-lg-6">
                 <p class="text-left">
-                  {{ new Date().getFullYear() }} — <strong>Huawei Cloud</strong>
+                  © {{ new Date().getFullYear() }} — <strong>All Rights Reserved</strong>
                 </p>
               </div>
               <div class="col-lg-6">
@@ -132,18 +148,17 @@ export default {
     getUserData() {
       this.$store.dispatch("getUser").then(() => {
         this.loggedIn = true;
-        
       });
     },
   },
   mounted() {
-    let user = localStorage.getItem('access-token')
-    console.log(user)
-    if(this.user == null){
-          this.$router.push({
-              path: "/",
-            });
-        }
+    // let user = localStorage.getItem('access-token')
+    // console.log(user)
+    // if(this.user == null){
+    //       this.$router.push({
+    //           path: "/",
+    //         });
+    //     }
     this.getUserData();
   },
   updated() {

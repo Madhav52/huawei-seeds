@@ -151,7 +151,6 @@ export default {
         .catch((err) => {
           this.toggleLoading = false;
           this.error = !this.error;
-          this.$swal("Error", err.message, "error");
         });
     },
     changeErrorStatus() {

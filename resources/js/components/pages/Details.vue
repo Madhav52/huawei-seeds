@@ -170,7 +170,7 @@
                     </v-col>
                   </v-row>
                   <v-row>
-                    <v-col cols="3"><h5>Personal Statemnent</h5></v-col>
+                    <v-col cols="3"><h5>Personal Statement</h5></v-col>
                     <v-col cols="9">
                       <v-textarea
                         :rules="statementRules"
@@ -347,7 +347,7 @@ export default {
     this.getUserData();
     let user = localStorage.getItem('access-token')
     console.log(user)
-    if(this.user == null){
+    if(this.user = null){
           this.$router.push({
               path: "/",
             });
@@ -423,7 +423,7 @@ export default {
         .then((response) => {
           this.$swal(
             "Success",
-            "Your data is successfully saved. We will get back to you soon.",
+            "ThankYou! We have received your application. We will get back to you if you are shortlisted for the interview.",
             "success"
           );
           //   this.clearForm();

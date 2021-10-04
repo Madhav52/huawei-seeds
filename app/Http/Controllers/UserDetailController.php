@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\UserDetail;
 use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\File;
@@ -33,7 +34,7 @@ class UserDetailController extends Controller
                 $ext = $info['extension'];
                 $newname = "profile-" . time() . '.' . $ext;
                 $path = Storage::disk('public')->putFileAs('users/documents', new File($_FILES['files']['tmp_name']), $newname);
-    
+
                 Storage::disk('public')->setVisibility($path, 'public');
             }
             $exists->files = $path;
@@ -59,19 +60,22 @@ class UserDetailController extends Controller
     {
         return response()->json(['error' => false, 'users' => UserDetail::all()]);
     }
-    public function generatePdf(Request $request, $id){
-        $user = UserDetail::with(['userdetail'])
-            ->where(['user_id' => $request->user_id])
+    public function generatePdf(Request $request)
+    {
+        $user = User::with(['userdetail'])
+            ->where(['id' => $request->user_id])
             ->first();
+
         // $headerHtml = view()->make('resume.footer')->render();
-//         $user = UserDetail::where('id', $id)->first();
-//    $pdf = PDF::loadView('pdfview', ['patients'=>$patients]);
-//    return $pdf->download('pdfview.pdf');
-        $pdf = SnappyPdf::loadView('pdf.userdetails.pdf', compact('user'))
+        //         $user = UserDetail::where('id', $id)->first();
+        //    $pdf = PDF::loadView('pdfview', ['patients'=>$patients]);
+        //    return $pdf->download('pdfview.pdf');
+
+        $pdf = SnappyPdf::loadView('pdf.userdetails', compact('user'))
             ->setOption('margin-bottom', '30mm');
         //        return $pdf->inline('invoice.pdf');
         // $this->storelog($request,Auth::user()->user_profile->full_name.' '.' have generated resume of '.' '.$applicant->user->user_profile->full_name);               
         //        $pdf = SnappyPdf::loadView('resume.pdf', compact('applicant'));
-        return $pdf->download('user-details.pdf');
+        return $pdf->inline('user-details.pdf');
     }
 }

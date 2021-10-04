@@ -28,7 +28,7 @@
                         <v-text-field
                         v-model="name"
                         label="Legal Full Name"
-                        :rules="[rules.required]"
+                        :rules="[rules.required, rules.fullName]"
                         name="login"
                         prepend-icon="mdi-account"
                         type="text"
@@ -47,7 +47,7 @@
                         id="password"
                         label="Password"
                         v-model="password"
-                        :rules="[rules.required]"
+                        :rules="[rules.required, rules.passwordPattern]"
                         prepend-icon="mdi-lock"
                         @click:append="show = !show"
                         :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
@@ -121,9 +121,22 @@ export default {
       toggleLoading: false,
       rules: {
         required: (value) => !!value || "Required",
+        passwordPattern: (value) => {
+          const pattern = /(?=.*?[A-Z])(?=.*?[#?!@$%^&*-]).{8,}/;
+          return (
+            pattern.test(value) ||
+            "8 characters long and 1 Uppercase and 1 special character"
+          );
+        },
         email: (value) => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return pattern.test(value) || "Invalid e-mail.";
+          return (
+            pattern.test(value) || "Invalid e-mail. Please enter valid email address"
+          );
+        },
+        fullName: (value) => {
+          const pattern = /^[a-zA-Z ]*$/;
+          return pattern.test(value) || "Please enter only alphabets (A-Z or a-z)";
         },
       },
     };

@@ -20,10 +20,8 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('generate-pdf', 'UserDetailController@generatePdf');
 
 Route::get('/{vue?}', function () {
     return view('welcome');
 })->where('vue', '[\/\w\.-]*');
-
-Route::get('generatePdf', 'UserDetailController@generatePdf');

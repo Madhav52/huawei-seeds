@@ -82,7 +82,7 @@
         :search="search"
       >
         <template v-slot:item.files="{ item }">
-               <a :href="item.files">
+               <a :href="item.files" target="_blank">
                   <v-btn
                 small
                 style="color: #fff; background: #163691"
@@ -97,14 +97,19 @@
               
             
             <div class="d-flex justify-left align-items-center">
-              <v-btn
-                small
-                style="color: #fff; background: #163691"
-                @click="generateUserDetails()"
-        
-              >
-                Download UserDetails
-              </v-btn>
+               <form ref="form" method="GET" target="_blank">
+                <input type="hidden" name="user_id" v-model="item.user_id" />
+
+                 <v-btn
+                  small
+                  style="color: #fff; background: #163691"
+                  @click="generateUserDetails()"
+          
+                >
+                  Download UserDetails
+                </v-btn>
+               </form>
+              
             </div>
           </div>
         </template>
@@ -161,15 +166,16 @@ export default {
         });
     },
      generateUserDetails() {
-        this.$refs.form.action = "/generatePdf"
       // this.$store
-      //   .dispatch("generateUserDetails", data)
+      //   .dispatch("generatePdf", data)
       //   .then((response) => {
       //     console.log(response.data)
       //   })
       //   .catch((error) => {
       //     console.log(error);
       //   });
+      this.$refs.form.action = "/generate-pdf";
+            this.$refs.form.submit();
     },
   },
   mounted(){
