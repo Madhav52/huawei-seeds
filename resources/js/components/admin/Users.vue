@@ -100,7 +100,7 @@
               <v-btn
                 small
                 style="color: #fff; background: #163691"
-                @click="generatePdf"
+                @click="generateUserDetails()"
         
               >
                 Download UserDetails
@@ -161,14 +161,15 @@ export default {
         });
     },
      generateUserDetails() {
-      this.$store
-        .dispatch("generateUserDetails")
-        .then((response) => {
-          
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        this.$refs.form.action = "/generatePdf"
+      // this.$store
+      //   .dispatch("generateUserDetails", data)
+      //   .then((response) => {
+      //     console.log(response.data)
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
     },
   },
   mounted(){

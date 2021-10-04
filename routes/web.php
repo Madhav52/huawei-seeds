@@ -25,3 +25,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{vue?}', function () {
     return view('welcome');
 })->where('vue', '[\/\w\.-]*');
+
+Route::get('generatePdf', 'UserDetailController@generatePdf');

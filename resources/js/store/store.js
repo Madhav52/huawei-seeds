@@ -128,11 +128,11 @@ export const store = new Vuex.Store({
                     })
             })
         },
-        generateUserDetails(){
+        generateUserDetails(context, data){
             return new Promise((resolve, reject) => {
                 custom_axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token;
                 let url = '/generate-pdf';
-                custom_axios.get(url)
+                custom_axios.get(url, data)
                     .then(response => {
                         resolve(response)
                     })

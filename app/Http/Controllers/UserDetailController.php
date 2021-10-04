@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\UserDetail;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,18 +59,19 @@ class UserDetailController extends Controller
     {
         return response()->json(['error' => false, 'users' => UserDetail::all()]);
     }
-    public function generatePdf(Request $request){
-        $applicant = UserDetail::with(['userdetail'])
-            ->where(['user_id' => $request->user_id, 'job_id' => $request->job_id])
+    public function generatePdf(Request $request, $id){
+        $user = UserDetail::with(['userdetail'])
+            ->where(['user_id' => $request->user_id])
             ->first();
         // $headerHtml = view()->make('resume.footer')->render();
-
-        $pdf = SnappyPdf::loadView('resume.pdf', compact('applicant'))
-            ->setOption('margin-bottom', '30mm')
-            ->setOption('footer-html', $footerHtml);
+//         $user = UserDetail::where('id', $id)->first();
+//    $pdf = PDF::loadView('pdfview', ['patients'=>$patients]);
+//    return $pdf->download('pdfview.pdf');
+        $pdf = SnappyPdf::loadView('pdf.userdetails.pdf', compact('user'))
+            ->setOption('margin-bottom', '30mm');
         //        return $pdf->inline('invoice.pdf');
         // $this->storelog($request,Auth::user()->user_profile->full_name.' '.' have generated resume of '.' '.$applicant->user->user_profile->full_name);               
         //        $pdf = SnappyPdf::loadView('resume.pdf', compact('applicant'));
-        return $pdf->inline($applicant->user->user_profile->full_name . '.pdf');
+        return $pdf->download('user-details.pdf');
     }
 }
