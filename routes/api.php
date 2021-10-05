@@ -31,3 +31,5 @@ Route::get('get-all-users', 'UserDetailController@getAllUsers');
     });
 });
 Route::post('user_profile', 'UserDetailController@store');
+Route::get('/user/verify/{token}', 'AuthController@verifyUser');
+

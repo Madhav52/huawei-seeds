@@ -141,25 +141,31 @@ export default {
               "We have received your applications. You donot need to login in the system again. We will reach out to you once you are shortlisted for the final interview. We wish you the best of luck.",
               "warning"
             );
-          }else{
-            if (response.status == 200) {
-            if (response.data.logged_in_user.role === 1) {
-              this.$router.push({
-                name: "Users",
-              });
-            } else {
-              this.$router.push({
-                name: "Details",
-              });
-            }
-
-            this.toggleLoading = false;
           } else {
-            this.toggleLoading = false;
-            
+            if (response.status == 200) {
+              if (response.data.logged_in_user.role === 1) {
+                this.$router.push({
+                  name: "Users",
+                });
+              } else {
+                if (response.data.logged_in_user.is_verified === 1) {
+                  this.$router.push({
+                    name: "Details",
+                  });
+                }else{
+                  this.$swal(
+                    "Sorry!",
+                    "Please check your email and click verify button in order to proceed to login.",
+                    "warning"
+                  );
+                }
+              }
+
+              this.toggleLoading = false;
+            } else {
+              this.toggleLoading = false;
+            }
           }
-          }
-          
         })
         .catch((err) => {
           this.toggleLoading = false;

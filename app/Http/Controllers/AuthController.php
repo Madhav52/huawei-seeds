@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\VerifyMail;
 use App\User;
+use App\VerifyUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Symfony\Component\Translation\Dumper\YamlFileDumper;
 
 class AuthController extends Controller
@@ -62,11 +65,48 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $accessToken = $user->createToken('authToken')->accessToken;
+        $verifyUser = VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => sha1(time())
+        ]);
+        $verUser = new VerifyMail($user);
+        $data["name"] = $verUser->user->name;
+        $data["email"] = $verUser->user->email;
+        $data["token"] = $verUser->user->verifyUser->token;
+        Mail::send('emails.verify-user', $data, function ($message) use ($verUser) {
+            $message->from('noreply@seedsnepal.com', 'Seeds Nepal');
+            $message->subject("User Activation Link.");
+            $message->to($verUser->user->email);
+        });
         return response()->json([
             'user' => $user,
             'access_token' => $accessToken,
             'message' => 'User Successfully Registered',
             'status_code' => 200
         ], 200);
+    }
+    public function verifyUser($token)
+    {
+
+        $verifyUser = VerifyUser::where('token', $token)->first();
+        if (isset($verifyUser)) {
+            $user = $verifyUser->user;
+            if ($user) {
+                if (!$user->is_verified) {
+                    $verifyUser->user->is_verified = 1;
+                    $verifyUser->user->save();
+                    $status = "Your e-mail is verified. You can now login.";
+                    return redirect('/');
+
+                } else {
+                    $status = "Your e-mail is already verified. You can now login.";
+                    return redirect('/');
+
+                }
+            }
+        } else {
+            return redirect('/')->with('warning', "Sorry your email cannot be identified.");
+        }
+    
     }
 }

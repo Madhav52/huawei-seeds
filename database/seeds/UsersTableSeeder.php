@@ -14,9 +14,10 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'admin',
-            'email' => 'info@seednepal.com',
-            'password' => bcrypt('SeedsForNepal'),
+            'email' => 'info@seedsnepal.com',
+            'password' => bcrypt('SeedsNepal'),
             'role' => '1',
+            'is_verified' => 1
         ]);
     }
 }

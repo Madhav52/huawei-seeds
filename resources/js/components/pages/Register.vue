@@ -143,6 +143,7 @@ export default {
   },
   methods: {
     register(e) {
+      this.toggleLoading = true;
       this.$store
         .dispatch("register", {
           name: this.name,
@@ -151,9 +152,10 @@ export default {
         })
         .then((response) => {
           if(response.data.status = 200){
+            this.toggleLoading = false;
             this.$swal(
             "Success",
-            "You have been successfully registered.",
+            "You have been successfully registered. Please check your email and verify it was you before proceed to login",
             "success"
           );
             this.$router.push({ name: "Login" });
@@ -163,11 +165,14 @@ export default {
               "Something went wrong. Please try again later.",
               "error"
             );
+            this.toggleLoading = false;
           }  
           }
         )
         .catch((error) => {
           this.password = "";
+          this.toggleLoading = false;
+
         });
       // } else {
       //   this.$swal(

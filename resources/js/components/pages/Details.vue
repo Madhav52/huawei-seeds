@@ -98,8 +98,9 @@
                       </v-radio-group>
                     </v-col>
 
-                    <v-col cols="4" v-if="this.gender == 'other'">
+                    <v-col cols="4" v-if="gender == 'other'">
                       <v-text-field
+                       v-model="other"
                         label="Others, Please Specify"
                         required
                         outlined
@@ -299,6 +300,7 @@ export default {
       name: "",
       phone: "",
       statement: "",
+      other: "",
       maxrules: [(v) => v.length <= 600 || "Max 600 characters only"],
       phoneRules: [(v) => !!v || "Phone number is required"],
       addressRules: [(v) => !!v || "Address is required"],
@@ -422,6 +424,7 @@ export default {
       formData.append("address", this.address);
       formData.append("phone", this.phone);
       formData.append("gender", this.gender);
+      formData.append("other", this.other);
       formData.append("institution", this.institution);
       formData.append("university", this.university);
       //   this.formHasErrors = false;

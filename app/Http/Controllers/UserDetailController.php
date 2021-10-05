@@ -27,6 +27,9 @@ class UserDetailController extends Controller
         //     'statement' => 'required|string'
         // ]);
         $data = $request->all();
+        if ($request->gender == 'other') {
+            $data['gender'] = $request->other;
+        }
         $exists = UserDetail::where('user_id', $request->user_id)->first();
         if (isset($exists)) {
             $exists->update($data);
@@ -37,6 +40,9 @@ class UserDetailController extends Controller
                 $path = Storage::disk('public')->putFileAs('users/documents', new File($_FILES['files']['tmp_name']), $newname);
 
                 Storage::disk('public')->setVisibility($path, 'public');
+            }
+            if ($request->gender == 'other') {
+                $exists['gender'] = $request->other;
             }
             Mail::to($data['email'])->send(new \App\Mail\MyTestMail($data));
             $exists->files = $path;
@@ -53,10 +59,10 @@ class UserDetailController extends Controller
             Storage::disk('public')->setVisibility($path, 'public');
         }
         Mail::to($data['email'])->send(new \App\Mail\MyTestMail($data));
-       
+
         $data->files = $path;
         $data->update();
-        
+
         // $data->user_id = Auth::user()->id;
         return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
     }
