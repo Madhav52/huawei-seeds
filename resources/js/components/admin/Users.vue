@@ -1,11 +1,6 @@
 <template>
-<v-app>
-    <v-navigation-drawer
-      app
-      v-model="drawer"
-      :mini-variant.sync="mini"
-      permanent
-    >
+  <v-app>
+    <v-navigation-drawer app v-model="drawer" :mini-variant.sync="mini" permanent>
       <v-list-item class="px-2">
         <!-- <v-list-item-avatar>
           <v-img
@@ -54,81 +49,67 @@
               <v-list-item-title>User Contacts</v-list-item-title>
             </v-list-item>
           </v-list-group> -->
-
-         
         </v-list-item-group>
       </v-list>
       <!-- -->
     </v-navigation-drawer>
-      <!-- Provides the application the proper gutter -->
-      <v-container>
-         <v-card elevation="5">
-      <v-card-title>
-        User Lists
-        <v-divider class="mx-4" inset vertical></v-divider>
-        <v-spacer></v-spacer>
-        <v-text-field
-          v-model="search"
-          append-icon="mdi-magnify"
-          label="Search"
-          single-line
-        ></v-text-field>
-      </v-card-title>
-      <v-data-table
-        :headers="headers"
-        :items="userLists"
-        item-key="name"
-        class="elevation-1"
-        :search="search"
-      >
-        <template v-slot:item.files="{ item }">
-               <a :href="item.files" target="_blank">
-                  <v-btn
-                small
-                style="color: #fff; background: #163691"
-        
-              >
+    <!-- Provides the application the proper gutter -->
+    <v-container>
+      <v-card elevation="5">
+        <v-card-title>
+          User Lists
+          <v-divider class="mx-4" inset vertical></v-divider>
+          <v-spacer></v-spacer>
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+          ></v-text-field>
+        </v-card-title>
+        <v-data-table
+          :headers="headers"
+          :items="userLists"
+          item-key="name"
+          class="elevation-1"
+          :search="search"
+        >
+          <template v-slot:item.files="{ item }">
+            <a :href="item.files" target="_blank">
+              <v-btn small style="color: #fff; background: #163691">
                 Preview Document
               </v-btn>
-               </a>
+            </a>
           </template>
-        <template v-slot:item.actions="{ item }">
-          <div class="d-flex align-items-center">
-              
-            
-            <div class="d-flex justify-left align-items-center">
-               <form ref="form" method="GET" target="_blank">
-                <input type="hidden" name="user_id" v-model="item.user_id" />
-
-                 <v-btn
-                  small
-                  style="color: #fff; background: #163691"
-                  @click="generateUserDetails()"
-          
-                >
-                  Download UserDetails
-                </v-btn>
-               </form>
-              
+          <template v-slot:item.actions="{ item }">
+            <div class="d-flex align-items-center">
+              <div class="d-flex justify-left align-items-center">
+                <form ref="form" method="GET" target="_blank" action="/generate-pdf">
+                  <input type="hidden" name="user_id" :value="item.user_id" />
+                  <v-btn small style="color: #fff; background: #163691" type="submit">
+                    {{ item.user_id }}
+                    Download UserDetails
+                  </v-btn>
+                </form>
+              </div>
             </div>
-          </div>
-        </template>
-      </v-data-table>
-    </v-card>
-      </v-container>
-</v-app>
+          </template>
+        </v-data-table>
+      </v-card>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
 export default {
-    data() {
+  data() {
     return {
       drawer: true,
       selectedItem: 0,
       mini: false,
       search: " ",
-        users: [],
-        headers: [
+      users: [],
+      headers: [
         { text: "S.N.", value: "sn" },
 
         {
@@ -142,7 +123,6 @@ export default {
         { text: "Created At", value: "created_at" },
         { text: "Actions", value: "actions", sortable: false },
       ],
-
     };
   },
   computed: {
@@ -154,18 +134,18 @@ export default {
     },
   },
   methods: {
-      getAllUsers() {
+    getAllUsers() {
       this.$store
         .dispatch("getAllUsers")
         .then((response) => {
-          console.log(response)
+          console.log(response);
           this.users = response.data.users;
         })
         .catch((error) => {
           console.log(error);
         });
     },
-     generateUserDetails() {
+    generateUserDetails() {
       // this.$store
       //   .dispatch("generatePdf", data)
       //   .then((response) => {
@@ -175,16 +155,13 @@ export default {
       //     console.log(error);
       //   });
       this.$refs.form.action = "/generate-pdf";
-            this.$refs.form.submit();
+      this.$refs.form.submit();
     },
   },
-  mounted(){
-    this.getAllUsers()
-  }
-
-}
+  mounted() {
+    this.getAllUsers();
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
