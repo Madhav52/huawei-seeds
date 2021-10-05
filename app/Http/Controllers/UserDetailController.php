@@ -44,7 +44,12 @@ class UserDetailController extends Controller
             if ($request->gender == 'other') {
                 $exists['gender'] = $request->other;
             }
-            Mail::to($data['email'])->send(new \App\Mail\MyTestMail($data));
+            Mail::send('emails.user-submission', $data, function ($message) use ($data) {
+                $message->from('noreply@seedsnepal.com', 'Seeds Nepal');
+                $message->subject("Application Submitted Successfull");
+                $message->to($data['email']);
+            });
+            // Mail::to($data['email'])->send(new \App\Mail\MyTestMail($data));
             $exists->files = $path;
             $exists->update();
             return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
