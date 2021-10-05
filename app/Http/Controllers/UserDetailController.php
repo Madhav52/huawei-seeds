@@ -8,6 +8,7 @@ use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class UserDetailController extends Controller
@@ -37,6 +38,7 @@ class UserDetailController extends Controller
 
                 Storage::disk('public')->setVisibility($path, 'public');
             }
+            Mail::to($data['email'])->send(new \App\Mail\MyTestMail($data));
             $exists->files = $path;
             $exists->update();
             return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
@@ -50,9 +52,11 @@ class UserDetailController extends Controller
 
             Storage::disk('public')->setVisibility($path, 'public');
         }
+        Mail::to($data['email'])->send(new \App\Mail\MyTestMail($data));
+       
         $data->files = $path;
         $data->update();
-
+        
         // $data->user_id = Auth::user()->id;
         return response()->json(["error" => false, "message" => "Updated Successfully.", 'data' => $data]);
     }

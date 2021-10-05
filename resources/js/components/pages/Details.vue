@@ -208,10 +208,11 @@ may exclude me from the training.`"
 
               <v-btn
                 color="primary"
+                :loading="toggleLoading"
                 @click="userProfilehandleSubmit"
                 :disabled="!valid && wordCount < 600"
               >
-                Submit
+                Save &amp; Submit
               </v-btn>
             </v-stepper-content>
 
@@ -294,6 +295,7 @@ export default {
       e1: 1,
       valid: false,
       row: null,
+      toggleLoading: false,
       name: "",
       phone: "",
       statement: "",
@@ -410,6 +412,7 @@ export default {
         (this.statement = "");
     },
     userProfilehandleSubmit(e) {
+      this.toggleLoading = true;
       var formData = new FormData();
       formData.append("files", this.files, this.files.name);
       formData.append("statement", this.statement);
@@ -434,9 +437,12 @@ export default {
             "ThankYou! We have received your application. We will get back to you if you are shortlisted for the interview.",
             "success"
           );
+          this.toggleLoading = false;
           //   this.clearForm();
         })
-        .catch((error) => {});
+        .catch((error) => {
+          this.toggleLoading = false;
+        });
     },
     getUserData() {
       this.$store.dispatch("getUser").then((res) => {
