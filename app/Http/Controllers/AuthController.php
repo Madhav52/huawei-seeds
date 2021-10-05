@@ -1,40 +1,55 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\Translation\Dumper\YamlFileDumper;
 
 class AuthController extends Controller
 {
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string'
         ]);
 
         $credentials = $request->only('email', 'password');
+        $exists = $this->checkUser($request->email);
+        if (!$exists) {
+            if (Auth::attempt($credentials)) {
+                $user = Auth::user();
+                $token = $user->createToken('authToken')->accessToken;
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            $token = $user->createToken('authToken')->accessToken;
-
-            return response()->json([
-                'logged_in_user' => $user,
-                'token' => $token,
-            ], 200);
-        } else {
-            return response()->json(
-                ['error' => 'invalid-credentials'],
-                422
-            );
+                return response()->json([
+                    'logged_in_user' => $user,
+                    'token' => $token,
+                ], 200);
+            } else {
+                return response()->json(
+                    ['error' => 'invalid-credentials'],
+                    422
+                );
+            }
         }
-
+        return response()->json(['code' => 405]);
+    }
+    public function checkUser($email)
+    {
+        $user = User::where('email', $email)->first();
+        if (isset($user->userdetail)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public function register(Request $request){
-        
+    public function register(Request $request)
+    {
+
         $request->validate([
             'name' => 'required',
             'email' => 'string|email|unique:users|required',

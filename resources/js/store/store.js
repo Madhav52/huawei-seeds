@@ -81,6 +81,18 @@ export const store = new Vuex.Store({
                     });
             });
         },
+        checkUser(context) {
+            return new Promise((resolve, reject) => {
+                custom_axios
+                    .get("/check-user")
+                    .then(response => {
+                        resolve(response);
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            });
+        },
 
         logout(context) {
             custom_axios.defaults.headers.common["Authorization"] = "Bearer " + context.state.token;

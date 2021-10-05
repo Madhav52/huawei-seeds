@@ -109,8 +109,10 @@ export default {
       show: false,
       email: null,
       password: null,
+      isExist: false,
       error: false,
       valid: false,
+      userDetail: [],
       toggleLoading: false,
       rules: {
         required: (value) => !!value || "Required",
@@ -131,7 +133,16 @@ export default {
       this.$store
         .dispatch("login", data)
         .then((response) => {
-          if (response.status == 200) {
+          if (response.data.code == 405) {
+            this.error = false;
+            this.toggleLoading = false;
+            this.$swal(
+              "Thank You!",
+              "We have received your applications. You donot need to login in the system again. We will reach out to you once you are shortlisted for the final interview. We wish you the best of luck.",
+              "warning"
+            );
+          }else{
+            if (response.status == 200) {
             if (response.data.logged_in_user.role === 1) {
               this.$router.push({
                 name: "Users",
@@ -145,13 +156,24 @@ export default {
             this.toggleLoading = false;
           } else {
             this.toggleLoading = false;
-            this.error = !this.error;
+            
           }
+          }
+          
         })
         .catch((err) => {
           this.toggleLoading = false;
           this.error = !this.error;
         });
+    },
+    checkUser() {
+      this.$store
+        .dispatch("checkUser")
+        .then((response) => {
+          this.isExist = true;
+          console.log(response);
+        })
+        .catch((err) => {});
     },
     changeErrorStatus() {
       this.error = false;

@@ -87,7 +87,6 @@
                 <form ref="form" method="GET" target="_blank" action="/generate-pdf">
                   <input type="hidden" name="user_id" :value="item.user_id" />
                   <v-btn small style="color: #fff; background: #163691" type="submit">
-                    {{ item.user_id }}
                     Download UserDetails
                   </v-btn>
                 </form>

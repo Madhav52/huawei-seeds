@@ -146,6 +146,7 @@
                         v-model="files"
                         outlined
                         required
+                        dense
                         :rules="[rules.document.type, documentRules]"
                         hint="DOC, PDF and DOCX only"
                         placeholder="Upload your documents"
@@ -167,6 +168,10 @@
                         @click.native="attachmentUploadErrorFiles = ''"
                         >{{ attachmentUploadErrorFiles }}</v-alert
                       >
+                    
+                    </v-col>
+                    <v-col cols="12">
+                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please upload your most-recent transcript (from your most recent semester or year of study). If you are a freshman and do not have a transcript, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head.</p>
                     </v-col>
                   </v-row>
                   <v-row>
@@ -183,6 +188,9 @@
                       <p class="text-right">
                         {{ wordCount }} Words. Maximum 600 words only.
                       </p>
+                    </v-col>
+                     <v-col cols="12">
+                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please type-in a 600-word (max) motivation letter. Your personal statement should reflect your objective to participate in the program, your interest in ICT and China, and your enthusiasm for learning. The maximum length of the motivation letter is 600 words. We do not require you to follow a template so you can be as creative as possible.</p>
                     </v-col>
                   </v-row>
                   <v-checkbox
