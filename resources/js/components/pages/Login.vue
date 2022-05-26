@@ -27,6 +27,7 @@
                     <v-form v-model="valid" @submit.prevent="loginFunc">
                       <v-text-field
                         v-model="email"
+                        autocomplete="username"
                         label="Email Address"
                         :rules="[rules.required, rules.email]"
                         name="login"
@@ -38,6 +39,7 @@
                         :type="show ? 'text' : 'password'"
                         id="password"
                         label="Password"
+                        autocomplete="new-password"
                         v-model="password"
                         :rules="[rules.required]"
                         prepend-icon="mdi-lock"

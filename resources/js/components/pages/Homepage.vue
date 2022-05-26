@@ -36,7 +36,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-
+       <v-btn text to="/news"> News </v-btn>
       <v-btn text to="/faq"> FAQs </v-btn>
       <v-btn text to="/" v-if="!loggedIn"> Login </v-btn>
 
