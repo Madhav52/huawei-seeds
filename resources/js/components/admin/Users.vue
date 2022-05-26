@@ -11,7 +11,7 @@
           ></v-img>
         </v-list-item-avatar> -->
 
-        <v-list-item-title> Seeds For Nepal</v-list-item-title>
+        <v-list-item-title> Seeds for the Future Nepal </v-list-item-title>
 
         <v-btn icon @click.stop="mini = !mini">
           <v-icon>mdi-chevron-left</v-icon>

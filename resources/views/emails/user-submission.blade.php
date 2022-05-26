@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Mail for You</title>
+    <title>Seeds for the Future Nepal</title>
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <style>
@@ -58,7 +58,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding-top: 20px; padding-bottom: 25px;">
-                                        <p style="color: #fff; text-align: left; font-family: 'Questrial', sans-serif; font-size: 18px; line-height: 1.5;">Thank you for submitting your application to Huawei Seeds for the Future 2021.</p> 
+                                        <p style="color: #fff; text-align: left; font-family: 'Questrial', sans-serif; font-size: 18px; line-height: 1.5;">Thank you for submitting your application to Huawei Seeds for the Future 2022.</p> 
                                         <p style="color: #fff; text-align: left; font-family: 'Questrial', sans-serif; font-size: 18px; line-height: 1.5;">We will reach out to you once you are shortlisted for the final interview. We wish you the best of luck.</p>
                                         <p style="color: #fff; text-align: left; font-family: 'Questrial', sans-serif; font-size: 18px; line-height: 1.5;">Note: Please do not reply to this email as it will not be received.</p>  
                                     </td>

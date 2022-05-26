@@ -17,7 +17,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse20">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">Who can join the program?</span>
+                ><span class="pl-2">What is Seeds for the Future?</span>
               </button>
             </h5>
           </div>
@@ -27,7 +27,7 @@
             aria-labelledby="heading20"
             data-parent="#accordionExample"
           >
-            <p>College undergraduates from any ICT-related discipline with excellent academic records (at least 3.0 GPA), interest in ICT industry and China, and a great enthusiasm for learning; have good English language ability; (preferred but not mandatory) have some knowledge of ICT basics.</p>
+            <p>Seeds for the Future is Huawei’s flagship CSR program aimed at undergraduate-level college students from any ICT-related discipline. Since 2008, over 12,000 students from all over the world have participated in the program. This year, the program will give 6 students from Nepal the opportunity to participate in our 1st ever regional program being held in Thailand to gain experience on technological innovation. The selected students will also participate in the Tech4Good global competition and forge friendships with international peers. (For more details, click on the “Program Details” tab.)</p>
           </div>
         </div>
         <div
@@ -42,7 +42,7 @@
             <h5>
               <button type="button" data-toggle="collapse" data-target="#collapse21">
                 <i class="fa fa-plus"></i
-                ><span class="pl-2">When is the program?</span>
+                ><span class="pl-2">What is the Tech4Good global competition?</span>
               </button>
             </h5>
           </div>
@@ -52,7 +52,7 @@
             aria-labelledby="heading21"
             data-parent="#accordionExample"
           >
-            <p>The online aspect of the program will take place from Nov 29 – Dec 6. The offline learning engagements will take place in mid-December.</p>
+            <p>The 6 students selected from Nepal will have to come up with an original idea to combat real-world social/environmental problems by using technology. Should your idea win the regional-level competition, you will get to participate in the Tech4Good accelerator camp in Singapore to turn your idea into reality. (For more details, visit https://www.huawei.com/minisite/seeds-for-the-future/community.html)</p>
           </div>
         </div>
         <div
@@ -62,10 +62,155 @@
           <div
             class="card-header"
             style="background-color: #fff; padding: 0; border: none"
-            id="heading22"
+            id="heading122"
           >
             <h5>
-              <button type="button" data-toggle="collapse" data-target="#collapse22">
+              <button type="button" data-toggle="collapse" data-target="#collapse122">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Who can apply for the program?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse122"
+            aria-labelledby="heading122"
+            data-parent="#accordionExample"
+          >
+            <p>College undergraduates from any ICT-related discipline with excellent academic records (at least 3.0 GPA), interest in the ICT and telecoms industry and technology issues, and a great enthusiasm for learning. The applicants must have good English language ability. The program is ONLY open to current undergraduate-level students or final year/semester students who are yet to receive their transcripts. Please submit your completed application by June 26, 2022 11:59 PM.</p>
+          </div>
+        </div>
+
+
+
+
+
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading123"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse123">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">When and where is the program?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse123"
+            aria-labelledby="heading123"
+            data-parent="#accordionExample"
+          >
+            <p>The program will be held in Bangkok from Aug 19-Aug 27. The Tech4Good winners will participate in the Tech4Good Accelerator Camp from Aug 20-Sep 2. Besides this, the selected students will also get to participate in our local engagement programs which we will run in partnership with our business partners and the UNESCO office in Nepal, the dates for which will be communicated at a later date.</p>
+          </div>
+        </div>
+<div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading124"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse124">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Will I have to bear any expenses for the program?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse124"
+            aria-labelledby="heading124"
+            data-parent="#accordionExample"
+          >
+            <p>Huawei will cover all travel, visa and medical expenses for the international travel to Bangkok. If selected for the Tech4Good Accelerator Camp in Singapore, those costs will also be borne by Huawei. We will however, not bear any personal expenses during the trip.</p>
+          </div>
+        </div>
+
+
+<div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading125"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse125">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">Do I need to be vaccinated against COVID-19?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse125"
+            aria-labelledby="heading125"
+            data-parent="#accordionExample"
+          >
+            <p>YES. It is mandatory that you have a government approved COVID-19 vaccination certificate appropriate for international travel.</p>
+          </div>
+        </div>
+
+
+<div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading126"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse126">
+                <i class="fa fa-plus"></i
+                ><span class="pl-2">What else do I require for travel?</span>
+              </button>
+            </h5>
+          </div>
+          <div
+            class="collapse"
+            id="collapse126"
+            aria-labelledby="heading126"
+            data-parent="#accordionExample"
+          >
+            <p>You will require the following for travel:</p>
+            <ul>
+              <li>A valid passport</li>
+              <li>Your personal laptop. Each participant should bring their own laptops on site.</li>
+              <li>Personal belongings like clothes &amp; shoes, notebook, laptop and phone charger, multi-function travel plug adaptor, pens, money</li>
+              <li>It is recommended that participants bring one or two small traditional items onsite for cultural exchange during Global Village on Day 3 in Thailand</li>
+              <li>1 formal suit; two ceremonial robe/dress for your amazing party</li>
+              <li>Suggestion: Bug Spray, Sunblock, Sunglasses, Umbrella, Medicine</li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div
+          class="card card-faq faq-detail shadow-sm my-4 mx-3"
+          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
+        >
+          <div
+            class="card-header"
+            style="background-color: #fff; padding: 0; border: none"
+            id="heading127"
+          >
+            <h5>
+              <button type="button" data-toggle="collapse" data-target="#collapse127">
                 <i class="fa fa-plus"></i
                 ><span class="pl-2">How can I apply to the program?</span>
               </button>
@@ -73,11 +218,11 @@
           </div>
           <div
             class="collapse"
-            id="collapse22"
-            aria-labelledby="heading22"
+            id="collapse127"
+            aria-labelledby="heading127"
             data-parent="#accordionExample"
           >
-            <p>Please visit our application website seedsnepal.com. Register for an account and follow the instructions received on the email you have used to register. Please note that the email address you use for registration will be used to communicate to you throughout the duration of the program. The deadline for applications is Nov 7, 2021.</p>
+            <p>Please visit our application website seedsnepal.com. Register for an account and follow the instructions received on the email you have used to register. Please note that the email address you use for registration will be used to communicate to you throughout the duration of the program. The deadline for applications is June 26, 2022 11:59PM.</p>
           </div>
         </div>
         <div
@@ -115,32 +260,7 @@
            <p>This is not an exhaustive list and students from any other undergraduate degree with a strong focus on ICT can apply.</p>
           </div>
         </div>
-        <div
-          class="card card-faq faq-detail shadow-sm my-4 mx-3"
-          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
-        >
-          <div
-            class="card-header"
-            style="background-color: #fff; padding: 0; border: none"
-            id="heading24"
-          >
-            <h5>
-              <button type="button" data-toggle="collapse" data-target="#collapse24">
-                <i class="fa fa-plus"></i
-                ><span class="pl-2">Is the course suitable for me even if I am a freshman student?</span>
-              </button>
-            </h5>
-          </div>
-          <div
-            class="collapse"
-            id="collapse24"
-            aria-labelledby="heading24"
-            data-parent="#accordionExample"
-          >
-            <p>YES. The mandatory tech courses have been designed for entry level students as an introduction to key technologies such as 5G, cloud computing and AI. You can also go deeper and join the advanced courses as an option.</p>
-            
-          </div>
-        </div>
+        
         <div
           class="card card-faq faq-detail shadow-sm my-4 mx-3"
           style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
@@ -163,7 +283,7 @@
             aria-labelledby="heading25"
             data-parent="#accordionExample"
           >
-          <p>Please upload your most-recent transcript (from your most recent semester or year of study). If you are a freshman and do not have a transcript, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head. You will also need to write a 600-word (max) motivation letter.</p>
+          <p>Please upload your most-recent marksheet (from your most recent semester or year of study). If you are a freshman and do not have a marksheet, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head. You will also need to write a 500 - 600 words (max) motivation letter.</p>
           </div>
         </div>
          <div
@@ -188,33 +308,7 @@
             aria-labelledby="heading26"
             data-parent="#accordionExample"
           >
-            <p>Your motivation letter should reflect your objective to participate in the program, your interest in ICT and China, and your enthusiasm for learning. The maximum length of the motivation letter is 600 words. We do not require you to follow a template so you can be as creative as possible.</p>
-            
-          </div>
-        </div>
-        <div
-          class="card card-faq faq-detail shadow-sm my-4 mx-3"
-          style="padding: 1.5rem; border-radius: 0.5rem; width: 100%"
-        >
-          <div
-            class="card-header"
-            style="background-color: #fff; padding: 0; border: none"
-            id="heading27"
-          >
-            <h5>
-              <button type="button" data-toggle="collapse" data-target="#collapse27">
-                <i class="fa fa-plus"></i
-                ><span class="pl-2">Is an internet connection mandatory for the program?</span>
-              </button>
-            </h5>
-          </div>
-          <div
-            class="collapse"
-            id="collapse27"
-            aria-labelledby="heading27"
-            data-parent="#accordionExample"
-          >
-            <p>YES. The 15-hour livestream and the 3-hour pre-recorded mandatory courses are only available online. We will be sharing sign-up and other details to our final 20 participants in mid-November.</p>
+            <p>Your motivation letter should reflect your objective to participate in the program, your interest in the ICT industry, and your enthusiasm for learning. The motivation letter should be between 500 and 600 words. We do not require you to follow a template so you can be as creative as possible.</p>
             
           </div>
         </div>
@@ -240,7 +334,7 @@
             aria-labelledby="heading28"
             data-parent="#accordionExample"
           >
-            <p>YES. You will get to e-meet your peers from other countries who are also attending the program starting Nov 29. You will be notified of the country list when the online program starts.</p>
+            <p>YES. You will get to meet your peers from the Asia Pacific region during the onsite program in Bangkok.</p>
             
           </div>
         </div>
@@ -266,8 +360,7 @@
             aria-labelledby="heading29"
             data-parent="#accordionExample"
           >
-            <p>Upon attending all the livestream classes, passing all the mandatory courses and participating in the Tech4Good project, participants will receive a Certificate of Completion and Personal Leadership Report. You will also qualify to join the Seeds for the Future LinkedIn alumni group and participate in recurring events.
-</p>
+            <p>Upon attending all the onsite classes, passing all the mandatory courses and participating in the Tech4Good project, participants will receive a Certificate of Completion and Personal Leadership Report. You will also qualify to join the Seeds for the Future LinkedIn alumni group and participate in recurring events.</p>
             
           </div>
         </div>
@@ -293,7 +386,7 @@
             aria-labelledby="heading30"
             data-parent="#accordionExample"
           >
-            <p>You will receive your Certificate of Completion and Personal Leadership Report upon completion of the online program. You are highly encouraged to attend the offline programs as they will give you a better insight into the ICT industry in Nepal.</p>
+            <p>You will receive your Certificate of Completion and Personal Leadership Report upon your return to Nepal. You are highly encouraged to attend the offline programs as they will give you a better insight into the ICT industry in Nepal.</p>
             
           </div>
         </div>
@@ -319,7 +412,7 @@
             aria-labelledby="heading31"
             data-parent="#accordionExample"
           >
-            <p>Please call 9801251992 if you need any support during the application.</p>
+            <p>Please call 9801251992 if you need any support during submitting the application.</p>
             
           </div>
         </div>

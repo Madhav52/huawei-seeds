@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Huawei Seeds</title>
+    <title>Huawei - Seeds for the Future</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -28,6 +28,7 @@
         <router-view></router-view>
     </v-app>
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 
 </html>

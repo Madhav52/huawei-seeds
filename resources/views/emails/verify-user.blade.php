@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jobs Suggestion for you</title>
+    <title>Seeds for the Future Nepal</title>
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <style>
@@ -57,7 +57,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" style="padding-top: 12px; padding-bottom: 25px;">
-                                        <p style="color: #fff; margin: 0 auto; font-family: 'Questrial', sans-serif; font-size: 18px; line-height: 1.5;">Thank you for registering on the Seeds for the Future Nepal platform. Please click the below 'Verify Now' button to verify your registration and begin your application</p>
+                                        <p style="color: #fff; margin: 0 auto; font-family: 'Questrial', sans-serif; font-size: 18px; line-height: 1.5;">Thank you for registering for Huawei’s Seeds for the Future 2022 program. Please click the below 'Verify Now' button to verify your registration and begin your application.</p>
                                     </td>
                                 </tr>
                                 <tr>

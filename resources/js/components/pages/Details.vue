@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col lg="8" offset-lg="2">
-        <h3>Please fill up form completely</h3>
+        <h3>•	Please fill in all segments in full before submitting your application</h3>
         <v-stepper v-model="e1">
           <v-stepper-header>
             <v-stepper-step :complete="e1 > 1" step="1">
@@ -140,7 +140,7 @@
                   </v-row>
                   <v-row>
                     <v-col cols="4"
-                      ><h5>Upload Transcript or Recommendation letter</h5></v-col
+                      ><h5>Upload Latest Marksheet/Recommendation Letter</h5></v-col
                     >
                     <v-col cols="8">
                       <v-file-input
@@ -172,18 +172,18 @@
                     
                     </v-col>
                     <v-col cols="12">
-                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please upload your most-recent transcript (from your most recent semester or year of study). If you are a freshman and do not have a transcript, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head.</p>
+                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please upload your most-recent marksheet (from your most recent semester or year of study). If you are a freshman and do not have a transcript, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head.</p>
                     </v-col>
                   </v-row>
                   <v-row>
-                    <v-col cols="3"><h5>Personal Statement</h5></v-col>
+                    <v-col cols="3"><h5>Motivation Letter</h5></v-col>
                     <v-col cols="9">
                       <v-textarea
                         :rules="statementRules"
                         v-model="statement"
                         outlined
                         dense
-                        label="Personal Statement"
+                        label="Motivation Letter"
                         required
                       ></v-textarea>
                       <p class="text-right">
@@ -191,7 +191,7 @@
                       </p>
                     </v-col>
                      <v-col cols="12">
-                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please type-in a 600-word (max) motivation letter. Your personal statement should reflect your objective to participate in the program, your interest in ICT and China, and your enthusiasm for learning. The maximum length of the motivation letter is 600 words. We do not require you to follow a template so you can be as creative as possible.</p>
+                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please type-in a 600-word (max) motivation letter. The motivation letter should be between 500 and 600 words. Your motivation letter should reflect your objective to participate in the program, your interest in the ICT industry, and your enthusiasm for learning. We do not require you to follow a template so you can be as creative as possible.</p>
                     </v-col>
                   </v-row>
                   <v-checkbox
@@ -308,7 +308,7 @@ export default {
       institutionRules: [(v) => !!v || "Institution name is required"],
       universityRules: [(v) => !!v || "University name is required"],
       documentRules: [(v) => !!v || "Document is required"],
-      statementRules: [(v) => !!v || "Statement is required"],
+      statementRules: [(v) => !!v || "Motivation Letter is required"],
       acknowledgeRules: [(v) => !!v || "You need to acknowledge before submit your data"],
       acknowledge: "",
       institution: "",
@@ -335,7 +335,7 @@ export default {
       },
       nameRules: [
         (v) => !!v || "Name is required",
-        (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
+        (v) => (v && v.length <= 20) || "Name must be less than 20 characters",
       ],
       email: "",
       emailRules: [

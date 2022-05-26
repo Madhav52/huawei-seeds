@@ -13,15 +13,15 @@
               <v-col cols="12">
                 <h2 class="text-center" style="font-weight: bold; color: #000">LOGIN</h2>
                 <v-divider></v-divider>
-                <!-- <div class="text-center mb-5">
+                <div class="text-center mb-5">
                   <img
-                    src="/images/huawei-cloud.png"
+                    src="/images/logo.png"
                     alt="Apply Job Logo"
                     class="img-fluid"
-                    width="60%"
-                    height="50px"
+                    width="30%"
+                    height="40px"
                   />
-                </div> -->
+                </div>
                 <div class="row justify-center">
                   <v-col cols="9" class="mt-4">
                     <v-form v-model="valid" @submit.prevent="loginFunc">
