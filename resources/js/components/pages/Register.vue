@@ -13,15 +13,15 @@
               <v-col cols="12">
                 <h2 class="text-center" style="font-weight: bold; color: #000">REGISTER</h2>
                 <v-divider></v-divider>
-                <!-- <div class="text-center mb-5">
+               <div class="text-center mb-3">
                   <img
-                    src="/images/huawei-cloud.png"
+                    src="/images/logo.png"
                     alt="Apply Job Logo"
                     class="img-fluid"
-                    width="60%"
-                    height="50px"
+                    width="30%"
+                    height="40px"
                   />
-                </div> -->
+                </div>
                 <div class="row justify-center">
                   <v-col cols="9">
                     <v-form v-model="valid">
@@ -39,6 +39,7 @@
                         :rules="[rules.required, rules.email]"
                         name="login"
                         prepend-icon="mdi-email"
+                        autocomplete="username"
                         type="text"
                       ></v-text-field>
 
@@ -47,6 +48,7 @@
                         id="password"
                         label="Password"
                         v-model="password"
+                        autocomplete="new-password"
                         :rules="[rules.required, rules.passwordPattern]"
                         prepend-icon="mdi-lock"
                         @click:append="show = !show"
@@ -78,23 +80,29 @@
                             Already have an account? <router-link to="/">Login</router-link>
                         </p>
                     </div>
-                    <div class="text-center pt-4">
+                   <div class="text-center pt-4">
                       <p style="font-weight: bold; font-size: 18px; color: #595959">
                         Powered by
-                        <a
-                          href="https://applyjob.com"
-                          color="primary"
-                          target="_blank"
-                          >
-                          <img
-                    src="/images/applyjob-logo.png"
-                    alt="Apply Job Logo"
-                    class="img-fluid"
-                    width="50%"
-                    height="30px"
-                  /></a
-                        >
                       </p>
+                      <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                          <a href="https://applyjob.com" color="primary" target="_blank">
+                          <img
+                            src="/images/applyjob.png"
+                            alt="Apply Job Logo"
+                            class="img-fluid"
+                            width="100px"
+                        /></a>
+                        </div>
+                        <div class="col lg-6">
+                          <a href="https://soft9.org" color="primary" target="_blank">
+                          <img
+                            src="/images/soft9.png"
+                            alt="Apply Job Logo"
+                            class="img-fluid"
+                        /></a>
+                        </div>
+                      </div>
                       <!-- <p>Huawei © {{ new Date().getFullYear() }}</p> -->
                     </div>
                   </v-col>

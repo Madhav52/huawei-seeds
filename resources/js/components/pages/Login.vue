@@ -13,7 +13,7 @@
               <v-col cols="12">
                 <h2 class="text-center" style="font-weight: bold; color: #000">LOGIN</h2>
                 <v-divider></v-divider>
-                <div class="text-center mb-5">
+                <div class="text-center mb-3">
                   <img
                     src="/images/logo.png"
                     alt="Apply Job Logo"
@@ -83,14 +83,26 @@
                     <div class="text-center pt-4">
                       <p style="font-weight: bold; font-size: 18px; color: #595959">
                         Powered by
-                        <a href="https://applyjob.com" color="primary" target="_blank">
+                      </p>
+                      <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                          <a href="https://applyjob.com" color="primary" target="_blank">
                           <img
-                            src="/images/applyjob-logo.png"
+                            src="/images/applyjob.png"
                             alt="Apply Job Logo"
                             class="img-fluid"
-                            width="50%"
+                            width="100px"
                         /></a>
-                      </p>
+                        </div>
+                        <div class="col lg-6">
+                          <a href="https://soft9.org" color="primary" target="_blank">
+                          <img
+                            src="/images/soft9.png"
+                            alt="Apply Job Logo"
+                            class="img-fluid"
+                        /></a>
+                        </div>
+                      </div>
                       <!-- <p>Huawei © {{ new Date().getFullYear() }}</p> -->
                     </div>
                   </v-col>

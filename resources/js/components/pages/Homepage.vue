@@ -34,6 +34,20 @@
               >
             </v-list-item-title>
           </v-list-item>
+          <v-list-item link>
+            <v-list-item-title>
+              <a href="https://www.facebook.com/HuaweiTechNP/videos/1079201635953765" class="pdf-viewer" target="_blank"
+                ><v-icon class="pr-4" small>mdi-logout</v-icon>2021 Introduction Video</a
+              >
+            </v-list-item-title>
+          </v-list-item>
+           <v-list-item link>
+            <v-list-item-title>
+              <a href="https://fb.watch/dgoi4FPUvH/" class="pdf-viewer" target="_blank"
+                ><v-icon class="pr-4" small>mdi-logout</v-icon>2021 Summary Video</a
+              >
+            </v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-menu>
        <v-btn text to="/news"> News </v-btn>
@@ -110,7 +124,7 @@
               <div class="col-lg-6">
                 <p class="text-right">
                   Powered by
-                  <a href="https://applyjob.com" style="color: #fff">Applyjob.com</a>
+                  <a href="https://applyjob.com" style="color: #fff">Applyjob.com</a> and <span><a href="https://soft9.org" style="color: #fff">Soft9.org</a></span>
                 </p>
               </div>
             </div>
