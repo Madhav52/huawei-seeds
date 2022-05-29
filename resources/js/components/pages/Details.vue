@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col lg="8" offset-lg="2">
-        <h3>•	Please fill in all segments in full before submitting your application</h3>
+        <h3>• Please fill in all segments in full before submitting your application</h3>
         <v-stepper v-model="e1">
           <v-stepper-header>
             <v-stepper-step :complete="e1 > 1" step="1">
@@ -100,7 +100,7 @@
 
                     <v-col cols="4" v-if="gender == 'other'">
                       <v-text-field
-                       v-model="other"
+                        v-model="other"
                         label="Others, Please Specify"
                         required
                         outlined
@@ -169,10 +169,18 @@
                         @click.native="attachmentUploadErrorFiles = ''"
                         >{{ attachmentUploadErrorFiles }}</v-alert
                       >
-                    
                     </v-col>
                     <v-col cols="12">
-                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please upload your most-recent marksheet (from your most recent semester or year of study). If you are a freshman and do not have a transcript, please upload a scanned copy of a recommendation letter from your institution printed on the official letter head.</p>
+                      <p
+                        class="mb-0"
+                        style="font-weight: bold; margin-top: -2rem; font-size: 12px"
+                      >
+                        Note: Please upload your most-recent marksheet (from your most
+                        recent semester or year of study). If you are a freshman and do
+                        not have a transcript, please upload a scanned copy of a
+                        recommendation letter from your institution printed on the
+                        official letter head.
+                      </p>
                     </v-col>
                   </v-row>
                   <v-row>
@@ -190,8 +198,18 @@
                         {{ wordCount }} Words. Maximum 600 words only.
                       </p>
                     </v-col>
-                     <v-col cols="12">
-                      <p class="mb-0" style="font-weight: bold; margin-top: -2rem; font-size: 12px">Note: Please type-in a 600-word (max) motivation letter. The motivation letter should be between 500 and 600 words. Your motivation letter should reflect your objective to participate in the program, your interest in the ICT industry, and your enthusiasm for learning. We do not require you to follow a template so you can be as creative as possible.</p>
+                    <v-col cols="12">
+                      <p
+                        class="mb-0"
+                        style="font-weight: bold; margin-top: -2rem; font-size: 12px"
+                      >
+                        Note: Please type-in a 600-word (max) motivation letter. The
+                        motivation letter should be between 500 and 600 words. Your
+                        motivation letter should reflect your objective to participate in
+                        the program, your interest in the ICT industry, and your
+                        enthusiasm for learning. We do not require you to follow a
+                        template so you can be as creative as possible.
+                      </p>
                     </v-col>
                   </v-row>
                   <v-checkbox
@@ -357,13 +375,13 @@ export default {
   },
   mounted() {
     this.getUserData();
-    let user = localStorage.getItem('access-token')
-    console.log(user)
-    if(this.user = null){
-          this.$router.push({
-              path: "/",
-            });
-        }
+    let user = localStorage.getItem("access-token");
+    console.log(user);
+    if ((this.user = null)) {
+      this.$router.push({
+        path: "/",
+      });
+    }
   },
   methods: {
     onAttachmentFilePicked(val, e) {
