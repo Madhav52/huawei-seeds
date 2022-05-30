@@ -40,7 +40,7 @@
                     <!-- header -->
                     <tr>
                         <td style="background: #ededed; text-align: center; padding: 36px 14px 36px 14px;">
-                            <h1 style="font-family: 'Questrial', sans-serif; font-size: 32px; color: #000; margin: 0;">Huawei Seeds for Future</h1>
+                            <h1 style="font-family: 'Questrial', sans-serif; font-size: 32px; color: #000; margin: 0;">Huawei Seeds for the Future</h1>
                         </td>
                     </tr>
 

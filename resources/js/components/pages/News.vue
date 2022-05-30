@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 mx-auto">
-          <h1>Seeds for the future Nepal- PRESS MEET</h1>
+          <h1>Seeds for the future Nepal 2021 - PRESS MEET</h1>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12 col-sm-12">
               <v-card class="news-collections-wrapper">
@@ -244,7 +244,7 @@
               </v-card>
             </div>
           </div>
-          <h1 class="my-5">Seeds for the future Nepal- OPENING CEREMONY</h1>
+          <h1 class="my-5">Seeds for the future Nepal 2021 - OPENING CEREMONY</h1>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12 col-sm-12">
               <v-card class="news-collections-wrapper">
@@ -430,7 +430,7 @@
               </v-card>
             </div>
           </div>
-          <h1 class="my-5">Seeds for the future Nepal- CLOSING CEREMONY</h1>
+          <h1 class="my-5">Seeds for the future Nepal 2021 - CLOSING CEREMONY</h1>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12 col-sm-12">
               <v-card class="news-collections-wrapper">
@@ -446,7 +446,7 @@
                       alt="seeds-for-the-future"
                     />
                     <div class="pt-3">
-                      <h3>The himalayan Times</h3>
+                      <h3>The Himalayan Times</h3>
                       <h5>
                         Huawei concludes global flagship 'Seeds for the Future' programme
                         in Nepal
@@ -468,28 +468,22 @@
             <div class="col-lg-6 col-md-6 col-12 col-sm-12">
               <v-card class="news-collections-wrapper">
                 <v-card-text>
-                  <a href="https://www.techpana.com/2021/113126/" target="_blank">
+                  <a href="https://www.techpana.com/2021/112747/" target="_blank">
                     <img
                       height="100%"
                       width="100%"
-                      src="https://www.techpana.com/wp-content/uploads/2021/12/269722109_426165125818123_6233573832595066389_n.png"
+                      src="https://www.techpana.com/wp-content/uploads/2021/12/huawei_seeds.jpg"
                       alt="seeds-for-the-future"
                     />
                     <div class="pt-3">
                       <h3>Techpana.com</h3>
                       <h5>
-                        ह्वावेले ल्यायो हार्मोनी ओएस भएको नयाँ चस्मा, यस्तो छ मूल्य र फिचर
+                        ह्वावेको ‘सीड्स फर द फ्युचर’ कार्यक्रममा नेपालका १९ विद्यार्थी सहभागी
                       </h5>
                       <p>
-                        काठमाडौं । ह्वावेले आफ्नै अपरेटिङ सिस्टम ‘हार्मोनी’ मा आधारित
-                        स्मार्ट ग्लास सार्वजनिक गरेको छ । ह्वावेका अनुसार यो
-                        स्मार्टग्लासमा १२८ स्क्वायर मिलिमिटरको ‘अल्ट्रा-थिन
-                        लार्ज-एम्प्लिट्युड’ स्पिकर प्रयोग गरिएको छ, जसले आवाज
-                        प्रयोगकर्ताको कानभन्दा बाहिर जानबाट रोक्छ । पानी, वर्षा र पसिनाबाट
-                        जोगिनसक्ने भनिएको यो स्मार्टग्लासलाई धुलोबाट जोगाउन भने केही
-                        समस्या हुने देखिएको छ । रियल टाइम अलर्ट र विच्याटबाट मौसमको
-                        नोटिफिकेसन पनि दिनसक्ने यो चस्माले एकचोटिको फुल चार्जमा १६ घण्टा
-                        सम्म काम गर्न सक्ने कम्पनीको दाबी छ । ...
+                        काठमाडौं । ह्वावेको ग्लोबल फ्ल्यागशिप कार्यक्रम ‘सीड्स फर द फ्युचर’ सम्पन्न भएको छ । विश्वव्यापी रुपमा आयोजना हुने उक्त कार्यक्रममा नेपालका स्नातक तहका अध्ययनरत १९ जना विद्यार्थी सहभागी थिए । विश्वका १३० देशमा आयोजना हुने यो कार्यक्रम नेपालमा भने पहिलोपटक भएको हो । कार्यक्रममा आठ विश्वविद्यालयका सूचना प्रविधिसँग सम्बन्धित विभिन्न नाै विधामा अध्ययनरत विद्यार्थीले भाग लिएका थिए । यसका लागि कम्पनीले अक्टोबर ६ देखि नोभेम्बरसम्म आवेदन माग गरेको थियो । जसमा नेपालभरबाट एक सय ३६ आवेदन प्राप्त भएको कम्पनीले जनाएको छ ।
+
+उक्त आवेदनमध्येबाट उत्कृष्ट छनोट गरी काठमाडौं उपत्यकाबाहिरका चार जनासहित १९ स्नातक तहका विद्यार्थी अन्तिम चरणका लागि छनोट भएका थिए । ...
                       </p>
                     </div>
                   </a>

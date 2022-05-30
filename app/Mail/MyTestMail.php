@@ -29,7 +29,7 @@ class MyTestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Application Submitted Successful')
+        return $this->subject('Application Submitted Successfully')
                     ->view('emails.user-submission');
     }
 }

@@ -22,14 +22,14 @@
         <v-list>
           <v-list-item link>
             <v-list-item-title>
-              <a href="/pdf/Application-Call.pdf" class="pdf-viewer" target="_blank"
+              <a href="/pdf/Application-Call-2022.pdf" class="pdf-viewer" target="_blank"
                 ><v-icon class="pr-4" small>mdi-logout</v-icon>Program Application Call</a
               >
             </v-list-item-title>
           </v-list-item>
           <v-list-item link>
             <v-list-item-title>
-              <a href="/pdf/Program-Introduction.pdf" class="pdf-viewer" target="_blank"
+              <a href="/pdf/Program-Introduction-2022.pdf" class="pdf-viewer" target="_blank"
                 ><v-icon class="pr-4" small>mdi-logout</v-icon>Program Introduction</a
               >
             </v-list-item-title>
@@ -85,7 +85,7 @@
               <div class="col-lg-6">
                 <div class="text-right">
                    <h4 style="color: #fff !important">For Support/Enquiry</h4>
-              <p style="color: #fff !important; font-size: 18px">Email Us: help@seedsnepal.com</p>
+              <p style="color: #fff !important; font-size: 18px">Email Us: supral.raj.joshi@huawei.com</p>
                 </div>
               </div>
             </div>

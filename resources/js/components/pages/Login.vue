@@ -152,7 +152,7 @@ export default {
             this.toggleLoading = false;
             this.$swal(
               "Thank You!",
-              "We have received your applications. You donot need to login in the system again. We will reach out to you once you are shortlisted for the final interview. We wish you the best of luck.",
+              "We have received your application. You do not need to login in the system again. We will reach out to you once you are shortlisted for the final interview. We wish you the best of luck.",
               "warning"
             );
           } else {

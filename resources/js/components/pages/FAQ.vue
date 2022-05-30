@@ -52,7 +52,7 @@
             aria-labelledby="heading21"
             data-parent="#accordionExample"
           >
-            <p>The 6 students selected from Nepal will have to come up with an original idea to combat real-world social/environmental problems by using technology. Should your idea win the regional-level competition, you will get to participate in the Tech4Good accelerator camp in Singapore to turn your idea into reality. (For more details, visit https://www.huawei.com/minisite/seeds-for-the-future/community.html)</p>
+            <p>The 7 students selected from Nepal will have to come up with an original idea to combat real-world social/environmental problems by using technology. Should your idea win the regional-level competition, you will get to participate in the Tech4Good accelerator camp in Singapore to turn your idea into reality. (For more details, visit link <a href="https://www.huawei.com/minisite/seeds-for-the-future/community.html" target="_blank">here</a> )</p>
           </div>
         </div>
         <div

@@ -140,7 +140,7 @@
                   </v-row>
                   <v-row>
                     <v-col cols="4"
-                      ><h5>Upload Latest Marksheet/Recommendation Letter</h5></v-col
+                      ><h5>Upload Latest Marksheet or Recommendation Letter</h5></v-col
                     >
                     <v-col cols="8">
                       <v-file-input
@@ -151,7 +151,7 @@
                         :rules="[rules.document.type, documentRules]"
                         hint="DOC, PDF and DOCX only"
                         placeholder="Upload your documents"
-                        label="Please upload scan copy of either your latest transcript or recommendation letter"
+                        label="Please upload scan copy of either your latest marksheet or recommendation letter"
                         v-on:change="onAttachmentFilePicked('files', $event)"
                         prepend-icon=""
                       >
@@ -234,72 +234,6 @@ may exclude me from the training.`"
                 Save &amp; Submit
               </v-btn>
             </v-stepper-content>
-
-            <!-- <v-stepper-content step="2">
-            <v-card
-            class="mb-12"
-            color="white lighten-1"
-            height="200px"
-            elevation="0"
-            >
-            <h5>Upload your latest transcript or recommendation letter from institution/university</h5> 
-            <v-file-input
-                    v-model="files"
-                    outlined
-                    placeholder="Upload your documents"
-                    label="Please upload scan copy of either your latest transcript or recommendation letter"
-                    multiple
-                    prepend-icon=""
-                >
-                    <template v-slot:selection="{ text }">
-                    <v-chip
-                        small
-                        label
-                        color="primary"
-                    >
-                        {{ text }}
-                    </v-chip>
-                    </template>
-                </v-file-input>
-            </v-card>
-
-            <v-btn
-            color="primary"
-            @click="e1 = 3"
-            >
-            Continue
-            </v-btn>
-
-            <v-btn  @click="e1 = 1">
-            Back
-            </v-btn>
-        </v-stepper-content>
-
-        <v-stepper-content step="3">
-            <v-card
-            class="mb-12"
-            color="white lighten-1"
-            height="200px"
-            elevation="0"
-            >
-            <h5>Please write presonal statement in details. (Not more than 600 words)</h5>
-            <v-textarea
-                counter
-                v-model="statement"
-                outlined
-                 maxlength="600"
-                label="Personal Statement"
-                :rules="rules"
-                ></v-textarea>
-            </v-card>
-
-            <v-btn
-            color="primary"
-            @click="e1 = 1"
-            >
-            Submit
-            </v-btn>
-        </v-stepper-content> -->
           </v-stepper-items>
         </v-stepper>
       </v-col>
@@ -431,6 +365,22 @@ export default {
         (this.institution = ""),
         (this.statement = "");
     },
+    logout() {
+      this.$store
+        .dispatch("logout")
+        .then((response) => {
+          if (response.status == 200) {
+            this.$router.push({
+              path: "/",
+            });
+            location.reload();
+            localStorage.clear();
+          }
+        })
+        .catch((error) => {
+          //   this.$swal("Error", error.message, "error");
+        });
+    },
     userProfilehandleSubmit(e) {
       this.toggleLoading = true;
       var formData = new FormData();
@@ -455,10 +405,14 @@ export default {
         .then((response) => {
           this.$swal(
             "Success",
-            "ThankYou! We have received your application. We will get back to you if you are shortlisted for the interview.",
+            "ThankYou! We have received your application. We will get back to you if you are shortlisted for the interview. You will be redirected to home page shortly.",
             "success"
           );
           this.toggleLoading = false;
+          setTimeout(() => {
+            this.$swal.close();
+            this.logout();
+          }, 5000);
           //   this.clearForm();
         })
         .catch((error) => {
