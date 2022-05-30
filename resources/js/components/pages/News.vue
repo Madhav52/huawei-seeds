@@ -225,7 +225,7 @@
                     />
 
                     <div class="pt-3">
-                      <h3>New Busniess Age</h3>
+                      <h3>New Business Age</h3>
                       <h5>Huawei Launches Seeds for the Future in Nepal</h5>
                       <p>
                         October 7: Chinese smartphone company Huawei has launched Seeds

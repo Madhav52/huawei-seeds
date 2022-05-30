@@ -79,7 +79,7 @@
                 <div class="text-left white--text">
                   <h4 class="pb-2" style="color: #fff">Follow Us</h4>
             <a href="https://www.facebook.com/HuaweiTechNP/" target="_blank" class="px-2"><v-icon size="24px">mdi-facebook</v-icon></a>
-            <a href="https://www.huawei.com/minisite/seeds-for-the-future/program.html" target="_blank" class="px-2"><v-icon size="24px">mdi-earth</v-icon></a>
+            <a href="https://www.huawei.com/minisite/seeds-for-the-future/index.html" target="_blank" class="px-2"><v-icon size="24px">mdi-earth</v-icon></a>
                 </div>
               </div>
               <div class="col-lg-6">
