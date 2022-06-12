@@ -182,13 +182,6 @@ export default {
           this.toggleLoading = false;
 
         });
-      // } else {
-      //   this.$swal(
-      //     "Error",
-      //     "Please fill out the captcha before you proceed ahead..",
-      //     "error"
-      //   );
-      // }
     },
 
     changeErrorStatus() {

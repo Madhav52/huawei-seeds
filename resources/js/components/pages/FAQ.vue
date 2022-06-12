@@ -27,7 +27,7 @@
             aria-labelledby="heading20"
             data-parent="#accordionExample"
           >
-            <p>Seeds for the Future is Huawei’s flagship CSR program aimed at undergraduate-level college students from any ICT-related discipline. Since 2008, over 12,000 students from all over the world have participated in the program. This year, the program will give 6 students from Nepal the opportunity to participate in our 1st ever regional program being held in Thailand to gain experience on technological innovation. The selected students will also participate in the Tech4Good global competition and forge friendships with international peers. (For more details, click on the “Program Details” tab.)</p>
+            <p>Seeds for the Future is Huawei’s flagship CSR program aimed at undergraduate-level college students from any ICT-related discipline. Since 2008, over 12,000 students from all over the world have participated in the program. This year, the program will give 7 students from Nepal the opportunity to participate in our 1st ever regional program being held in Thailand to gain experience on technological innovation. The selected students will also participate in the Tech4Good global competition and forge friendships with international peers. (For more details, click on the “Program Details” tab.)</p>
           </div>
         </div>
         <div
